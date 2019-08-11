@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Input, Menu} from "semantic-ui-react";
+import { Input, Menu, Image } from "semantic-ui-react";
 import { SidebarMenu } from "./Sidebar";
 
 export class Home extends Component {
@@ -10,25 +10,14 @@ export class Home extends Component {
     const { activeItem } = this.state;
     return (
       <div>
-        <Menu secondary>
-          <Menu.Item
-            name="home"
-            active={activeItem === "home"}
-            onClick={this.handleItemClick}
-          />
-          <Menu.Item
-            name="messages"
-            active={activeItem === "messages"}
-            onClick={this.handleItemClick}
-          />
-          <Menu.Item
-            name="friends"
-            active={activeItem === "friends"}
-            onClick={this.handleItemClick}
-          />
+        <Menu color="blue" inverted={true} secondary>
           <Menu.Menu position="right">
             <Menu.Item>
               <Input icon="search" placeholder="Search..." />
+            </Menu.Item>
+            <Menu.Item>
+              <Image src="https://react.semantic-ui.com/images/avatar/small/stevie.jpg" avatar />
+              <span>Username</span>
             </Menu.Item>
             <Menu.Item
               name="logout"
@@ -37,7 +26,6 @@ export class Home extends Component {
             />
           </Menu.Menu>
         </Menu>
-
       </div>
     );
   }

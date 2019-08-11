@@ -16,3 +16,13 @@ code {
   padding: 1em;
   background-color: darkolivegreen;
 }
+.ui.segment.pushable {
+  min-height: 100vh;
+  border: none;
+}
+
+.ui.secondary.inverted.pointing.menu  {
+  width: inherit;
+  min-height: 100vh;
+  position: fixed;
+}

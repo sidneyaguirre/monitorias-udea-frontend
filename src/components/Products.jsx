@@ -57,7 +57,7 @@ export class Products extends Component {
                   <div className="header">{product.title}</div>
                   <div className="description">
                     {/* {product.installments.currency_id}{" "} */}
-                    {product.installments.amount}
+                    {/* {product.installments.amount} */}
                     <a href={product.permalink}> IR </a>
                   </div>
                 </div>
