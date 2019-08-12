@@ -1,0 +1,29 @@
+@import "./colors.scss";
+
+.header {
+  padding: 0.5rem 0rem;
+  height: 80px;
+  background: #6b9a03;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+.header__logo {
+  float: left;
+}
+
+.font-weight-light,
+.font-weight-bold {
+  text-decoration: none;
+  color: $black;
+  font-size: 40px;
+}
+
+.font-weight-light:hover,
+.font-weight-bold:hover {
+  text-decoration: none;
+  color: $black;
+  font-size: 40px;
+}
+
