@@ -1,16 +1,15 @@
 @import "./colors.scss";
 
 .header {
-  padding: 0.5rem 0rem;
-  height: 80px;
+  padding: 1.5rem 1rem;
+  height: 195px;
   background: #6b9a03;
   display: flex;
   justify-content: center;
-  padding-bottom: 1rem;
 }
 
-.header__logo {
-  float: left;
+.Navbar__title {
+  float: right;
 }
 
 .font-weight-light,

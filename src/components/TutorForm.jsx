@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../styles/Tutor.scss";
 
 class TutorForm extends Component {
     
@@ -15,7 +16,7 @@ class TutorForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className="tutor__form">
         <h1>Nuevo Monitor</h1>
 
         <form onSubmit={this.handleSubmit}>
@@ -63,7 +64,7 @@ class TutorForm extends Component {
             />
           </div>
 
-          <button onClick={this.handleClick} className="btn btn-primary">
+          <button onClick={this.handleClick} className="btn float-right">
             Guardar
           </button>
         </form>

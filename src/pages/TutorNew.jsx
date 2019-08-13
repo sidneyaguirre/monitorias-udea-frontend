@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+import "../styles/Tutor.scss";
 import TutorForm from "../components/TutorForm";
 
 class TutorNew extends Component {
@@ -29,12 +30,10 @@ class TutorNew extends Component {
       <div>
         <div className="container">
           <div className="row">
-            <div className="col-6">
               <TutorForm
                 onChange={this.handleChange}
                 formValues={this.state.form}
               />
-            </div>
           </div>
         </div>
       </div>
