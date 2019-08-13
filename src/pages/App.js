@@ -4,21 +4,25 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Home from "./Home";
-import TutorNew from "./TutorNew"
+import TutorNew from "./TutorNew";
+import TutoryDetails from "./TutoryDetails";
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <div>
-          <Header />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/tutor/new" component={TutorNew} />
-          </Switch>
-          <Footer />
-        </div>
-      </BrowserRouter>
+      <div className="App__body">
+        <BrowserRouter>
+          <div>
+            <Header />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/tutor/new" component={TutorNew} />
+              <Route exact path="/tutory/details" component={TutoryDetails} />
+            </Switch>
+            <Footer />
+          </div>
+        </BrowserRouter>
+      </div>
     </div>
   );
 }
