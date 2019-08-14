@@ -46,9 +46,9 @@ class TutorForm extends Component {
               className="form-control"
               name="documentType"
               value={this.props.formValues.documentType}
-              placeholder="Seleccione..."
               required              
             >
+              <option value="">Selecione...</option>
               <option value="CC">Cédula de Ciudadanía</option>
               <option value="TI">Tarjeta de Identidad</option>
             </select>

@@ -2,7 +2,17 @@ import React, { Component } from "react";
 
 import "../styles/Tutor.scss";
 import TutorForm from "../components/TutorForm";
-//import api from "../api"
+
+const initialState = {
+  form: {
+    documentType: "",
+    documentNumber: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    courseId: ""
+  }
+};
 
 class TutorNew extends Component {
   state = {
@@ -16,8 +26,8 @@ class TutorNew extends Component {
     }
   };
 
-   //createCourse = async courseInfo => {};
-    
+  //createCourse = async courseInfo => {};
+
   handleChange = e => {
     this.setState({
       form: {
@@ -29,23 +39,33 @@ class TutorNew extends Component {
     });
   };
 
-   
   handleSubmit = async e => {
     e.preventDefault();
     console.log("Form submitted");
     console.log(this.state);
-    var url = "https://monitorias-backend.herokuapp.com/api/v1/users/createInstructor";
+    this.createTutor(this.state.form);
+    this.setState(initialState);
+    console.log(initialState);
+    
+  };
+
+  createTutor = async info => {
+    var url =
+      "https://monitorias-backend.herokuapp.com/api/v1/users/createInstructor";
     var data = {
-      documentType: this.state.form.documentType,
-      documentNumber: this.state.form.documentNumber,
-      firstName: this.state.form.firstName,
-      lastName: this.state.form.lastName,
-      email: this.state.form.email,
-      idMateriaxinstructor: this.state.form.courseId
+      documentType: info.documentType,
+      documentNumber: info.documentNumber,
+      firstName: info.firstName,
+      lastName: info.lastName,
+      email: info.email,
+      idMateriaxinstructor: info.courseId
     };
     fetch(url, {
       method: "POST",
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json"
+      }
     })
       .then(res => res.json())
       .catch(error => console.error("Error:", error))
@@ -57,11 +77,11 @@ class TutorNew extends Component {
       <div>
         <div className="container">
           <div className="row">
-              <TutorForm
-                onChange={this.handleChange}
-                onSubmit={this.handleSubmit}
-                formValues={this.state.form}
-              />
+            <TutorForm
+              onChange={this.handleChange}
+              onSubmit={this.handleSubmit}
+              formValues={this.state.form}
+            />
           </div>
         </div>
       </div>
