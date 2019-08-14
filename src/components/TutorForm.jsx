@@ -63,8 +63,8 @@ class TutorForm extends Component {
               value={this.props.formValues.subject}
             />
           </div>
-
-          <button onClick={this.handleClick} className="btn float-right">
+          
+          <button onClick={this.handleClick} className="btn btn-primary float-right">
             Guardar
           </button>
         </form>

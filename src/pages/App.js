@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import Home from "./Home";
 import TutorNew from "./TutorNew";
 import TutoryDetails from "./TutoryDetails";
+import NewStudent from "./Student/NewStudent";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
               <Route exact path="/" component={Home} />
               <Route exact path="/tutor/new" component={TutorNew} />
               <Route exact path="/tutory/details" component={TutoryDetails} />
+              <Route exact path="/student/new" component={NewStudent}/>
             </Switch>
             <Footer />
           </div>
