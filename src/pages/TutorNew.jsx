@@ -42,11 +42,9 @@ class TutorNew extends Component {
   handleSubmit = async e => {
     e.preventDefault();
     console.log("Form submitted");
-    console.log(this.state);
-    this.createTutor(this.state.form);
-    this.setState(initialState);
-    console.log(initialState);
-    
+    this.createTutor(this.state.form)
+    .then(() => {this.setState(initialState)}
+    );    
   };
 
   createTutor = async info => {
