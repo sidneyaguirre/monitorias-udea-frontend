@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "../components/common/Header";
+import Footer from "../components/common/Footer";
 import Home from "./Home";
-import TutorNew from "./TutorNew";
-import TutoryDetails from "./TutoryDetails";
+import TutorNew from "./Tutor/TutorNew";
+import TutoryDetails from "./Tutory/TutoryDetails";
 
 function App() {
   return (

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-import "../styles/Tutor.scss";
-import TutorForm from "../components/TutorForm";
+import "../../styles/Tutor/Tutor.scss";
+import TutorForm from "../../components/Tutor/TutorForm";
 
 const initialState = {
   form: {

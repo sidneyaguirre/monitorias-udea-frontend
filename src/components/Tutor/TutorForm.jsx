@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../styles/Tutor.scss";
+import "../../styles/Tutor/Tutor.scss";
 
 class TutorForm extends Component {
 
