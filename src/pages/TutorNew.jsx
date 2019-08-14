@@ -2,18 +2,22 @@ import React, { Component } from "react";
 
 import "../styles/Tutor.scss";
 import TutorForm from "../components/TutorForm";
+//import api from "../api"
 
 class TutorNew extends Component {
   state = {
     form: {
+      documentType: "",
+      documentNumber: "",
       firstName: "",
       lastName: "",
       email: "",
-      subject: ""
+      courseId: ""
     }
   };
 
-  /* manage a change in the page to set the new state */
+   //createCourse = async courseInfo => {};
+    
   handleChange = e => {
     this.setState({
       form: {
@@ -25,6 +29,29 @@ class TutorNew extends Component {
     });
   };
 
+   
+  handleSubmit = async e => {
+    e.preventDefault();
+    console.log("Form submitted");
+    console.log(this.state);
+    var url = "https://monitorias-backend.herokuapp.com/api/v1/users/createInstructor";
+    var data = {
+      documentType: this.state.form.documentType,
+      documentNumber: this.state.form.documentNumber,
+      firstName: this.state.form.firstName,
+      lastName: this.state.form.lastName,
+      email: this.state.form.email,
+      idMateriaxinstructor: this.state.form.courseId
+    };
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify(data)
+    })
+      .then(res => res.json())
+      .catch(error => console.error("Error:", error))
+      .then(response => console.log("Success:", response));
+  };
+
   render() {
     return (
       <div>
@@ -32,6 +59,7 @@ class TutorNew extends Component {
           <div className="row">
               <TutorForm
                 onChange={this.handleChange}
+                onSubmit={this.handleSubmit}
                 formValues={this.state.form}
               />
           </div>
