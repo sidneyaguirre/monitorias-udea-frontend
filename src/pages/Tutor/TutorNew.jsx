@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import "../../styles/Tutor/Tutor.scss";
-import TutorForm from "../../components/Tutor/TutorForm";
+import NewTutorForm from "../../components/Tutor/NewTutorForm";
 
 const initialState = {
   form: {
@@ -75,7 +75,7 @@ class TutorNew extends Component {
       <div>
         <div className="container">
           <div className="row">
-            <TutorForm
+            <NewTutorForm
               onChange={this.handleChange}
               onSubmit={this.handleSubmit}
               formValues={this.state.form}
