@@ -3,19 +3,17 @@ import React, { Component } from 'react';
 class NewTutoryForm extends Component {
 
 /* body: {
-	"idInstructor": "65465",
-	"nameInstructor":"Luis",
-	"nameSubscriptor":"eduardo",
-	"email":"leduardo.ochoa@udea.edu.co",
-	"state":"Active",
-	"name":"Asesoria test",
-	"description":"Testing asesoria",
-	"place":"Aero",
+    "idInstructor":"23432423",
+	"description":"Curso lógica 3",
+	"idMateria":"234324",
 	"semester":"2019-2",
-	"date":"14-08-2019",
-	"timeInit":"10:00AM",
-	"timeEnd":"12:00PM"
+	"idAsesoria":"243234234",
+	"idAsesoriaPrivada":"65468",
+	"id":"3432432",
+	"name":"Luis",
+	"email":"leduardo.ochoa@udea.edu.co"
 }
+
  */
 
     handleClick = e => {
@@ -26,7 +24,7 @@ class NewTutoryForm extends Component {
       render() {
         return (
           <div className="tutory__form">
-            <h1>Nueva Monitoría</h1>
+            <h1>Nuevo Curso</h1>
     
             <form onSubmit={this.props.onSubmit}>
               <div className="form-group">
@@ -42,25 +40,37 @@ class NewTutoryForm extends Component {
               </div>
     
               <div className="form-group">
-                <label>Aula</label>
+                <label>Código de la Materia del Curso</label>
                 <input
                   onChange={this.props.onChange}
                   type="text"
                   className="form-control"
-                  name="classroom"
-                  value={this.props.formValues.classroom}
+                  name="courseId"
+                  value={this.props.formValues.courseId}
+                  required
+                />
+              </div>
+
+              <div className="form-group">
+                <label>Número de Documento del Monitor</label>
+                <input
+                  onChange={this.props.onChange}
+                  type="number"
+                  className="form-control"
+                  name="tutorId"
+                  value={this.props.formValues.tutorId}
                   required
                 />
               </div>
     
               <div className="form-group">
-                <label>Tipo de Documento</label>
+                <label>Tipo de Asesoría</label>
                 <select
                   onChange={this.props.onChange}
                   type="text"
                   className="form-control"
-                  name="documentType"
-                  value={this.props.formValues.documentType}
+                  name="tutoryType"
+                  value={this.props.formValues.tutoryType}
                   required              
                 >
                   <option value="">Selecione...</option>
@@ -70,7 +80,7 @@ class NewTutoryForm extends Component {
               </div>
     
               <div className="form-group">
-                <label>Número de Documento</label>
+                <label>Semestre</label>
                 <input
                   onChange={this.props.onChange}
                   type="number"
