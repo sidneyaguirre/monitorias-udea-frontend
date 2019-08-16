@@ -5,6 +5,7 @@ import Header from "../components/common/Header";
 import Footer from "../components/common/Footer";
 import Home from "./Home";
 import TutorNew from "./Tutor/TutorNew";
+import CourseTutorNew from "./Tutor/CourseTutorNew"
 import TutoryDetails from "./Tutory/TutoryDetails";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/tutor/new" component={TutorNew} />
+              <Route exact path="/tutor/add-course" component={CourseTutorNew} />
               <Route exact path="/tutory/details" component={TutoryDetails} />
             </Switch>
             <Footer />
