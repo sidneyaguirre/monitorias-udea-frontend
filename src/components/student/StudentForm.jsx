@@ -45,8 +45,8 @@ class StudentForm extends Component {
           <div className="col">
             <div className="form-group">
               <label htmlFor="type">Tipo de documento</label>
-              <select id="type" className="form-control" name="type">
-                <option value="" selected>Elige un tipo de documento...</option>
+              <select id="type" className="form-control" name="type" value={this.props.formValues.type}>
+                <option value="">Elige un tipo de documento...</option>
                 <option value="CC">Cédula de Ciudadanía</option>
                 <option value="CE">Cédula de Extranjería</option>
                 <option value="TI" >Tarjeta de identidad</option>

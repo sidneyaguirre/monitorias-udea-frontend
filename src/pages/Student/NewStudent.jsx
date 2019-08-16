@@ -9,7 +9,7 @@ class NewStudent extends Component {
       lastName: "",
       number: "",
       email: "",
-      documentType: "",
+      documentType: "DEFAULT",
       documentNumber: ""
     }
   };
