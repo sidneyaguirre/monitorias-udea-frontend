@@ -7,6 +7,7 @@ const initialState = {
   form: {
     subjectId: "",
     documentNumber: "",
+    year: "",
     semester: "",
     description: ""
   }
@@ -17,6 +18,7 @@ class CourseTutorNew extends Component {
     form: {
       subjectId: "",
       documentNumber: "",
+      year: "",
       semester: "",
       description: ""
     }
@@ -47,7 +49,7 @@ class CourseTutorNew extends Component {
     var data = {
       idMateria: info.subjectId,
       idInstructor: info.documentNumber,
-      semester: info.semester,
+      semester: info.year + '-' + info.semester,
       description: info.description
     };
     fetch(url, {

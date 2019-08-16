@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "../../styles/Tutor/Tutor.scss";
 
 class CreateCourseForm extends Component {
-
   handleClick = e => {
     console.log("button clicked");
   };
@@ -12,7 +11,7 @@ class CreateCourseForm extends Component {
       <div className="coursetutor__form">
         <h1>Nuevo Curso</h1>
         <p>Este espacio te permite crear un nuevo curso como monitor</p>
-        
+
         <form onSubmit={this.props.onSubmit}>
           <div className="form-group">
             <label>Código de la materia de la que serás monitor</label>
@@ -56,14 +55,30 @@ class CreateCourseForm extends Component {
 
           <div className="form-group">
             <label>Semestre en que serás monitor</label>
-            <input
+            <div className="form-row">
+              <input
+                onChange={this.props.onChange}
+                type="text"
+                className="form-control col"
+                name="year"
+                value={this.props.formValues.year}
+                placeholder="año"
+                required
+              />
+              <div className="col-1 text-center"><p>-</p></div>
+              <select
               onChange={this.props.onChange}
               type="text"
-              className="form-control"
+              className="form-control col"
               name="semester"
               value={this.props.formValues.semester}
               required
-            />
+            >
+              <option value="">Selecione...</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+            </select>
+            </div>
           </div>
 
           <div className="form-group">
