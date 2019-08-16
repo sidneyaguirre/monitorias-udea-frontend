@@ -13,7 +13,6 @@ class NewTutoryForm extends Component {
 	"name":"Luis",
 	"email":"leduardo.ochoa@udea.edu.co"
 }
-
  */
 
     handleClick = e => {
