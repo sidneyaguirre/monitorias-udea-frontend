@@ -9,7 +9,7 @@ class StudentForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
     console.log("Form submitted");
-    console.log(this.state);
+    console.log(this.props);
   };
 
   render() {
@@ -18,7 +18,7 @@ class StudentForm extends Component {
         <div className="row p-0">
           <div className="col">
             <div className="form-group">
-              <label htmlFor="name">Nombre</label>
+              <label htmlFor="name">Nombres</label>
               <input 
               type="text" 
               onChange={this.props.onChange}
@@ -41,13 +41,15 @@ class StudentForm extends Component {
           </div>
         </div>
 
-        {/* <div className="row p-0">
+        <div className="row p-0">
           <div className="col">
             <div className="form-group">
               <label htmlFor="type">Tipo de documento</label>
-              <select id="type" className="form-control">
-                <option selected>Choose...</option>
-                <option>...</option>
+              <select id="type" className="form-control" name="type">
+                <option value="" selected>Elige un tipo de documento...</option>
+                <option value="CC">Cédula de Ciudadanía</option>
+                <option value="CE">Cédula de Extranjería</option>
+                <option value="TI" >Tarjeta de identidad</option>
               </select>
             </div>
           </div>
@@ -55,10 +57,11 @@ class StudentForm extends Component {
             <div className="form-group">
               <label htmlFor="number">Número</label>
               <input
-                type="number"
+                type="text"
                 className="form-control"
-                id="number"
-                value=""
+                name="number"
+                onChange={this.props.onChange}
+                value={this.props.formValues.number}
               />
             </div>
           </div>
@@ -66,14 +69,15 @@ class StudentForm extends Component {
 
         <div className="row p-0">
           <div className="col">
-            <div class="form-group ">
+            <div className="form-group ">
               <label htmlFor="email">Email</label>
 
               <input
                 type="email"
-                class="form-control"
-                id="email"
-                placeholder="Email"
+                className="form-control"
+                name="email"
+                onChange={this.props.onChange}
+                value={this.props.formValues.email}
               />
             </div>
           </div>
@@ -92,7 +96,7 @@ class StudentForm extends Component {
               Guardar
             </button>
           </div>
-        </div> */}
+        </div>
       
       </form>
     );
