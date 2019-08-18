@@ -17,14 +17,24 @@ class StudentForm extends Component {
       <form onSubmit={this.handleSubmit}>
         <div className="row p-0">
           <div className="col">
+            <h3 className="h3 text-primary">¡Regístrate!</h3>
+            <p className="lead">
+              Bienvenid@ a Monitorías UdeA, solo necesitamos los siguientes
+              datos para que puedas empezar.              
+            </p>
+          </div>
+        </div>
+        <div className="row p-0 is-font-small">
+          <div className="col">
             <div className="form-group">
               <label htmlFor="name">Nombres</label>
-              <input 
-              type="text" 
-              onChange={this.props.onChange}
-              className="form-control" 
-              name="name"
-              value={this.props.formValues.name} />
+              <input
+                type="text"
+                onChange={this.props.onChange}
+                className="form-control"
+                name="name"
+                value={this.props.formValues.name}
+              />
             </div>
           </div>
           <div className="col">
@@ -41,15 +51,15 @@ class StudentForm extends Component {
           </div>
         </div>
 
-        <div className="row p-0">
+        <div className="row p-0 row p-0 is-font-small">
           <div className="col">
             <div className="form-group">
               <label htmlFor="type">Tipo de documento</label>
               <select id="type" className="form-control" name="type">
-                <option value="" selected>Elige un tipo de documento...</option>
+                <option value="" selected>    </option>
                 <option value="CC">Cédula de Ciudadanía</option>
                 <option value="CE">Cédula de Extranjería</option>
-                <option value="TI" >Tarjeta de identidad</option>
+                <option value="TI">Tarjeta de identidad</option>
               </select>
             </div>
           </div>
@@ -67,7 +77,7 @@ class StudentForm extends Component {
           </div>
         </div>
 
-        <div className="row p-0">
+        <div className="row p-0 row p-0 is-font-small">
           <div className="col">
             <div className="form-group ">
               <label htmlFor="email">Email</label>
@@ -81,13 +91,11 @@ class StudentForm extends Component {
               />
             </div>
           </div>
-          <div className="col">
-           
-          </div>
+          <div className="col" />
         </div>
 
         <div className="row p-0">
-          <div className="col"></div>
+          <div className="col" />
           <div className="col">
             <button
               onClick={this.handleClick}
@@ -97,7 +105,6 @@ class StudentForm extends Component {
             </button>
           </div>
         </div>
-      
       </form>
     );
   }

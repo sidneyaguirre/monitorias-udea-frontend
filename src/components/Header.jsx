@@ -7,18 +7,25 @@ import "../styles/Header.scss";
 class Header extends Component {
   render() {
     return (
-      <div className="header">
-        <div className="container-fluid">
-          <nav className="navbar navbar-expand-sm bg-light navbar-light">
-            <Link className="navbar-brand" to="/">
-              <img src={logo} alt="logo udea" />
-            </Link>
-                <div className="Navbar__title">
-                  <span className="font-weight-light">Monitorías </span>
-                  <span className="font-weight-bold">UdeA</span>
-                </div>
-          </nav>
-        </div>
+      <div className="">
+        <nav className="navbar navbar-light bg-light">
+          <Link className="navbar-brand"  to="/">
+            <img
+              src={logo}
+              height="50"
+              className="d-inline-block align-top"
+              alt="logo udea"
+              to="/"             
+            />&nbsp;&nbsp;
+            <span className="navbar-text is-font-weight-200 text-primary">
+            Monitorías 
+            </span>&nbsp;
+            <span className="navbar-text is-font-weight-800 text-primary">
+             UdeA
+            </span>
+           
+          </Link>
+        </nav>
       </div>
     );
   }

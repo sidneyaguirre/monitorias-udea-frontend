@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import image from "../../assets/new.jpg"
+import image from "../../assets/reading-girl.svg"
 import StudentForm from "../../components/student/StudentForm";
 
 class NewStudent extends Component {
@@ -27,11 +27,11 @@ class NewStudent extends Component {
   render() {
     return (
       <div>
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-sm">
-              <img 
-              src='https://www.freepik.com/free-vector/flat-university-background_4482547.html' alt="" width="90%"/>
+        <div className="container">
+          <div className="row p-4 pt-5 h-100">
+            <div className="col-sm align-self-center text-center">
+              <img className="w-50"
+              src={image} alt="" />
               </div>
             <div className="col-sm">
               <StudentForm 
