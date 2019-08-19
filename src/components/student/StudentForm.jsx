@@ -101,7 +101,7 @@ class StudentForm extends Component {
               onClick={this.handleClick}
               className="btn btn-primary float-right"
             >
-              Guardar
+              Empezar
             </button>
           </div>
         </div>

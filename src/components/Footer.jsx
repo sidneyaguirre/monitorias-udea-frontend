@@ -5,7 +5,7 @@ import "../styles/Footer.scss"
 class Footer extends Component {
   render() {
     return (
-      <div className="footer">
+      <div className="footer container">
         <div className="footer__info">
           <span>
             Universidad de Antioquia | Vigilada Mineducación | Acreditación
