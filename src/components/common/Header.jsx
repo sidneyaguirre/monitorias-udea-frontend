@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import logo from "../assets/logo-udea.png";
 import { Link } from "react-router-dom";
 
-import "../styles/Header.scss";
+import "../../styles/common/Header.scss";
+import logo from "../../assets/logo-udea.png";
 
 class Header extends Component {
   render() {

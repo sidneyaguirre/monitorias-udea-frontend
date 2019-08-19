@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import '../styles/Tutory.scss'
+import '../../styles/Tutory/Tutory.scss'
 
 class Tutory extends Component{
     render(){

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-import "../styles/Tutor.scss";
-import Tutory from "../components/Tutory";
+import "../../styles/Tutory/Tutory.scss";
+import Tutory from "../../components/Tutory/Tutory";
 
 /* it Will show the details of a tutory */
 
