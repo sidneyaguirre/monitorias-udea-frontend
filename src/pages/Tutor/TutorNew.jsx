@@ -5,24 +5,26 @@ import TutorForm from "../../components/Tutor/TutorForm";
 
 const initialState = {
   form: {
+    courseId: "",
     documentType: "",
     documentNumber: "",
     firstName: "",
     lastName: "",
     email: "",
-    courseId: ""
+    password: ""
   }
 };
 
 class TutorNew extends Component {
   state = {
     form: {
+      courseId: "",
       documentType: "",
       documentNumber: "",
       firstName: "",
       lastName: "",
       email: "",
-      courseId: ""
+      password: ""
     }
   };
 
@@ -42,21 +44,22 @@ class TutorNew extends Component {
   handleSubmit = async e => {
     e.preventDefault();
     console.log("Form submitted");
-    this.createTutor(this.state.form)
-    .then(() => {this.setState(initialState)}
-    );    
+    this.createTutor(this.state.form).then(() => {
+      this.setState(initialState);
+    });
   };
 
   createTutor = async info => {
     var url =
       "https://monitorias-backend.herokuapp.com/api/v1/users/createInstructor";
     var data = {
+      idMateriaxinstructor: info.courseId,
       documentType: info.documentType,
       documentNumber: info.documentNumber,
       firstName: info.firstName,
       lastName: info.lastName,
       email: info.email,
-      idMateriaxinstructor: info.courseId
+      password: info.password
     };
     fetch(url, {
       method: "POST",
@@ -73,6 +76,7 @@ class TutorNew extends Component {
   render() {
     return (
       <div>
+        <div className="container" />
         <div className="container">
           <div className="row">
             <TutorForm

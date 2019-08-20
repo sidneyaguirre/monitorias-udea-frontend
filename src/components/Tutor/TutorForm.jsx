@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "../../styles/Tutor/Tutor.scss";
 
 class TutorForm extends Component {
-
   handleClick = e => {
     /* prevent the button to submit info */
     console.log("button clicked");
@@ -14,6 +13,18 @@ class TutorForm extends Component {
         <h1>Nuevo Monitor</h1>
 
         <form onSubmit={this.props.onSubmit}>
+          <div className="form-group">
+            <label>Código de Materia a cargo</label>
+            <input
+              onChange={this.props.onChange}
+              type="number"
+              className="form-control"
+              name="courseId"
+              value={this.props.formValues.courseId}
+              required
+            />
+          </div>
+
           <div className="form-group">
             <label>Nombre</label>
             <input
@@ -46,7 +57,7 @@ class TutorForm extends Component {
               className="form-control"
               name="documentType"
               value={this.props.formValues.documentType}
-              required              
+              required
             >
               <option value="">Selecione...</option>
               <option value="CC">Cédula de Ciudadanía</option>
@@ -79,13 +90,13 @@ class TutorForm extends Component {
           </div>
 
           <div className="form-group">
-            <label>Código de Materia a cargo</label>
+            <label>Contraseña</label>
             <input
               onChange={this.props.onChange}
-              type="number"
+              type="password"
               className="form-control"
-              name="courseId"
-              value={this.props.formValues.courseId}
+              name="password"
+              value={this.props.formValues.password}
               required
             />
           </div>
