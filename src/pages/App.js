@@ -5,8 +5,9 @@ import Header from "../components/common/Header";
 import Footer from "../components/common/Footer";
 import Home from "./Home";
 import TutorNew from "./Tutor/TutorNew";
-import CourseTutorNew from "./Tutor/CourseTutorNew"
 import TutoryDetails from "./Tutory/TutoryDetails";
+import NewStudent from "./Student/NewStudent";
+import CourseTutorNew from "./Tutor/CourseTutorNew"
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               <Route exact path="/tutor/new" component={TutorNew} />
               <Route exact path="/tutor/add-course" component={CourseTutorNew} />
               <Route exact path="/tutory/details" component={TutoryDetails} />
+              <Route exact path="/student/new" component={NewStudent}/>
             </Switch>
             <Footer />
           </div>

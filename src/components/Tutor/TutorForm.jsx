@@ -100,8 +100,8 @@ class TutorForm extends Component {
               required
             />
           </div>
-
-          <button onClick={this.handleClick} className="btn float-right">
+          
+          <button onClick={this.handleClick} className="btn btn-primary float-right">
             Guardar
           </button>
         </form>
