@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import "../../styles/Tutor/Tutor.scss";
 import CreateCourseForm from "../../components/Tutor/CreateCourseForm";
+import tutorNewCourse from "../../assets/mathematics.svg";
 
 const initialState = {
   form: {
@@ -10,7 +11,8 @@ const initialState = {
     year: "",
     semester: "",
     description: ""
-  }
+  },
+  courses: []
 };
 
 class CourseTutorNew extends Component {
@@ -21,7 +23,8 @@ class CourseTutorNew extends Component {
       year: "",
       semester: "",
       description: ""
-    }
+    },
+    courses: []
   };
 
   handleChange = e => {
@@ -43,7 +46,7 @@ class CourseTutorNew extends Component {
     });
   };
 
-  createCourse = async info => {
+   createCourse = async info => {
     var url =
       "https://monitorias-backend.herokuapp.com/api/v1/cursos/createCurso";
     var data = {
@@ -64,16 +67,48 @@ class CourseTutorNew extends Component {
       .then(response => console.log("Success:", response));
   };
 
+  componentDidMount() {
+    var url =
+      "https://monitorias-backend.herokuapp.com/api/v1/cursos/getAllCursos";
+    var subjects = [];
+    fetch(url)
+      .then(res => res.json())
+      .catch(error => console.error("Error:", error))
+      .then(info => {
+        Promise.all(
+          info.data.map(element =>
+            subjects.push({
+              _id: element.id,
+              name: element.name
+            })
+          )
+        ).then(() => {
+          this.setState({
+            courses: [].concat(this.state.courses, subjects)
+          });
+        });
+      });
+  };
+
   render() {
     return (
       <div>
         <div className="container">
           <div className="row">
-            <CreateCourseForm 
-              onChange={this.handleChange}
-              onSubmit={this.handleSubmit}
-              formValues={this.state.form}
-            />
+            <div className="col-sm">
+              <CreateCourseForm
+                onChange={this.handleChange}
+                onSubmit={this.handleSubmit}
+                formValues={this.state}
+              />
+            </div>
+            <div className="image-container col-sm">
+              <img
+                src={tutorNewCourse}
+                alt="new tutor"
+                className="tutor-img card-img-top mx-auto d-block"
+              />
+            </div>
           </div>
         </div>
       </div>
