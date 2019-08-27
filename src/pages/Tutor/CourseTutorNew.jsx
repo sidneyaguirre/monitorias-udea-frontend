@@ -69,7 +69,7 @@ class CourseTutorNew extends Component {
       <div>
         <div className="container">
           <div className="row">
-            <CreateCourseForm
+            <CreateCourseForm 
               onChange={this.handleChange}
               onSubmit={this.handleSubmit}
               formValues={this.state.form}

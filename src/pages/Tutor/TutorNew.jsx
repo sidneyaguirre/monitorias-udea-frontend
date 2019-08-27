@@ -2,29 +2,30 @@ import React, { Component } from "react";
 
 import "../../styles/Tutor/Tutor.scss";
 import TutorForm from "../../components/Tutor/TutorForm";
+import tutorNewImg from "../../assets/voice_interface.svg";
 
 const initialState = {
   form: {
-    courseId: "",
     documentType: "",
     documentNumber: "",
     firstName: "",
     lastName: "",
     email: "",
-    password: ""
+    password1: "",
+    password2: ""
   }
 };
 
 class TutorNew extends Component {
   state = {
     form: {
-      courseId: "",
       documentType: "",
       documentNumber: "",
       firstName: "",
       lastName: "",
       email: "",
-      password: ""
+      password1: "",
+      password2: ""
     }
   };
 
@@ -41,26 +42,44 @@ class TutorNew extends Component {
     });
   };
 
+  handlePasswords = (password1, password2) => {
+    if (password1 !== password2) {
+      return false;
+    } else {
+      return true;
+    }
+  };
+
   handleSubmit = async e => {
     e.preventDefault();
     console.log("Form submitted");
     this.createTutor(this.state.form).then(() => {
-      this.setState(initialState);
+      this.setState(initialState.form);
     });
+  };
+
+  unequalPasswordsAlert = () => {
+    window.alert("Las contraseñas no coinciden")
   };
 
   createTutor = async info => {
     var url =
       "https://monitorias-backend.herokuapp.com/api/v1/users/createInstructor";
+    var equalPasswords = this.handlePasswords(info.password1, info.password2);
     var data = {
-      idMateriaxinstructor: info.courseId,
       documentType: info.documentType,
       documentNumber: info.documentNumber,
       firstName: info.firstName,
       lastName: info.lastName,
       email: info.email,
-      password: info.password
+      password: ""
     };
+    if (equalPasswords === true) {
+      data.password = info.password2;
+    }else{
+      this.unequalPasswordsAlert();
+    }
+    console.log(data);
     fetch(url, {
       method: "POST",
       body: JSON.stringify(data),
@@ -76,13 +95,19 @@ class TutorNew extends Component {
   render() {
     return (
       <div>
-        <div className="container" />
-        <div className="container">
-          <div className="row">
+        <div className="row">
+          <div className="col-sm">
             <TutorForm
               onChange={this.handleChange}
               onSubmit={this.handleSubmit}
               formValues={this.state.form}
+            />
+          </div>
+          <div className="image-container col-sm">
+            <img
+              src={tutorNewImg}
+              alt="new tutor"
+              className="tutor-img card-img-top mx-auto d-block"
             />
           </div>
         </div>

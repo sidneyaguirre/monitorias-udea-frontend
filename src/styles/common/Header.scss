@@ -1,13 +1,5 @@
 @import "../colors.scss";
 
-.header {
-  padding: 1.5rem 1rem;
-  height: 195px;
-  background: #6b9a03;
-  display: flex;
-  justify-content: center;
-}
-
 .Navbar__title {
   float: right;
 }
@@ -15,14 +7,14 @@
 .font-weight-light,
 .font-weight-bold {
   text-decoration: none;
-  color: $black;
+  color: $medium-ugreen;
   font-size: 40px;
 }
 
 .font-weight-light:hover,
 .font-weight-bold:hover {
   text-decoration: none;
-  color: $black;
+  color: $medium-ugreen;
   font-size: 40px;
 }
 
