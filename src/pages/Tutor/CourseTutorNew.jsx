@@ -6,7 +6,6 @@ import tutorNewCourse from "../../assets/mathematics.svg";
 
 const initialState = {
   form: {
-    subjectId: "",
     documentNumber: "",
     year: "",
     semester: "",
@@ -78,14 +77,15 @@ class CourseTutorNew extends Component {
         Promise.all(
           info.data.map(element =>
             subjects.push({
-              _id: element.id,
+              _id: element._id,
               name: element.name
             })
           )
         ).then(() => {
           this.setState({
-            courses: [].concat(this.state.courses, subjects)
-          });
+            courses: [].concat(this.state.courses, subjects)            
+          });console.log(this.state);
+          
         });
       });
   };

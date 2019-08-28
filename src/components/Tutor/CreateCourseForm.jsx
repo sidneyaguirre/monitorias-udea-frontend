@@ -84,7 +84,7 @@ class CreateCourseForm extends Component {
                 value={this.props.formValues.form.semester}
                 required
               >
-                <option value="">Selecione...</option>
+                <option value="">Semestre...</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
               </select>
