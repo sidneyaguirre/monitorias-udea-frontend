@@ -18,14 +18,13 @@ class CreateCourseForm extends Component {
             <label>
               <strong>Materia</strong> de la que serás monitor
             </label>
-            {/* <SelectCourse
+            <SelectCourse
               onChange={this.props.onChange}
-              type="select"
               className="form-control"
               name="subjectId"
               required
-              value={this.props.formValues.courses}
-            /> */}
+              subjects={this.props.formValues.courses}
+            />
           </div>
 
           <div className="form-group">

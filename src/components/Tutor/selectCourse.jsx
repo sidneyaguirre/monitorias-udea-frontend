@@ -4,11 +4,11 @@ class SelectCourse extends Component {
   render() {
     return (
       <div>
-        <select>
-          {this.props.courses.map(course => {
+        <select className="form-control">
+          {this.props.subjects.map(course => {
             return (
               <option>
-                   {course._id} - {course.name}
+                   {course.name}
               </option>
             );
           })}
