@@ -8,9 +8,9 @@ class Header extends Component {
   render() {
     return (
         <div className="container-fluid row justify-content-md-center">
-          <nav className="navbar navbar-expand-sm bg-light navbar-light">
+          <nav className="navbar navbar-expand-sm">
             <Link className="navbar-brand" to="/">
-              <img src={logo} alt="logo udea" />
+              <img className="logo-img" src={logo} alt="logo udea" />
             </Link>
                 <div className="Navbar__title">
                   <span className="font-weight-light">Monitorías </span>

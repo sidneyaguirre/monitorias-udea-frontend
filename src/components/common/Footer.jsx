@@ -28,7 +28,7 @@ class Footer extends Component {
           </span>
           <span>NIT 890980040-8<br/></span>
           <span>
-            <Link to="http://www.udea.edu.co/wps/wcm/connect/udea/328fd736-37e3-46b0-b43c-beb24cb8c6e3/rr-39994.pdf?MOD=AJPERES&amp;CVID=lZbell4&amp;CVID=lZbell4&amp;CVID=lZbell4&amp;CVID=lZbell4&amp;CVID=lZbell4&amp;CVID=lZbell4">
+            <Link to="http://www.udea.edu.co/wps/wcm/connect/udea/328fd736-37e3-46b0-b43c-beb24cb8c6e3/rr-39994.pdf?MOD=AJPERES&CVID=lZbell4&CVID=lZbell4&CVID=lZbell4&CVID=lZbell4&CVID=lZbell4&CVID=lZbell4">
               Política de Tratamiento de Datos Personales
             </Link><br/>
           </span>
