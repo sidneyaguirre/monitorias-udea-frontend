@@ -1,0 +1,48 @@
+@import "../colors.scss";
+
+.tutory {
+  height: auto;
+  width: 250px;
+  background: $white;
+  -webkit-box-shadow: 5px 5px 15px 5px $medium-gray; 
+box-shadow: 5px 5px 15px 5px $medium-gray;
+  box-shadow: 10px 10px 10px 5px $medium-gray;
+  border-radius: 8px 8px 8px 8px;
+  overflow: hidden;
+}
+
+.tutory__header {
+  padding: 0.5rem 0;
+  height: 80px;
+  background: $medium-ugreen;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $white;
+}
+
+.tutory__section-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1;
+}
+
+.tutory__section-info {
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: $white;
+  line-height: 20px;
+}
+
+.tutory__footer {
+  padding: 10px;
+  background-color: $light-gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

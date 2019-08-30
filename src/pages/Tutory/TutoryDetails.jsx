@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
-import "../../styles/Tutory/Tutory.scss";
-import Tutory from "../../components/Tutory/Tutory";
+import TutoryCard from "../../components/Tutory/TutoryCard";
 
 /* it Will show the details of a tutory */
 
@@ -11,7 +10,8 @@ class TutoryDetails extends Component {
       subject: "Álgebra Lineal",
       tutorFirstName: "Pepito",
       tutorLastName: "Pérez",
-      email: "pepito.perez@udea.edu.co"
+      email: "pepito.perez@udea.edu.co",
+      place: "20-206"
     }
   };
 
@@ -20,11 +20,8 @@ class TutoryDetails extends Component {
       <div>
         <div className="container">
           <div className="row">
-            <Tutory
-              subject={this.state.form.subject}
-              tutorFirstName={this.state.form.tutorFirstName}
-              tutorLastName={this.state.form.tutorLastName}
-              email={this.state.form.email}
+            <TutoryCard
+              details={this.state.form}
             />
           </div>
         </div>

@@ -7,7 +7,7 @@ import logo from "../../assets/logo-udea.png";
 class Header extends Component {
   render() {
     return (
-        <div className="container-fluid">
+        <div className="container-fluid row justify-content-md-center">
           <nav className="navbar navbar-expand-sm bg-light navbar-light">
             <Link className="navbar-brand" to="/">
               <img src={logo} alt="logo udea" />

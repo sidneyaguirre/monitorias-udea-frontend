@@ -135,7 +135,7 @@ class TutorForm extends Component {
 
           <button
             onClick={this.handleClick}
-            className="btn btn-primary float-right"
+            className="button float-right"
           >
             Guardar
           </button>
