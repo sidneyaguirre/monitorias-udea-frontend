@@ -27,11 +27,15 @@ $normal-ugreen: #6c9a05;
 // $font-gray: #9c9c9c;
 
 $theme-colors: (
-  "primary": $medium-ugreen,
+  "primary": $dark-ugreen,
   "danger": #ff4136,
-  "secondary": $dark-ugreen,
+  "secondary": $medium-ugreen,
   "dark": #0a351c
 );
+$light-gray: #ECECEC;
+$medium-gray: #E0E0E0;
+$dark-gray: #A6A6A6;
+
 
 body {
   margin: 0;

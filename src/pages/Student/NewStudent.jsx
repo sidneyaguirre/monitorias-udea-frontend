@@ -10,7 +10,9 @@ class NewStudent extends Component {
       number: "",
       email: "",
       documentType: "",
-      documentNumber: ""
+      documentNumber: "",
+      password: "",
+      confirmPassword:""
     }
   };
 

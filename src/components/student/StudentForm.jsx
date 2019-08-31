@@ -1,10 +1,31 @@
 import React, { Component } from "react";
 
 class StudentForm extends Component {
+  validation = {
+    nameError: "",
+    lastNameError: "",
+    numberError: "",
+    emailError: "",
+    documentTypeError: "",
+    documentNumberError: "",
+    passwordError: "",
+    confirmPasswordError:""
+  };
+
   handleClick = e => {
-    /* prevent the button to submit info */
+    e.preventDefault();    
+    this.validateForm();
+    
     console.log("button clicked");
   };
+
+  validateForm = () => {
+    if(!this.props.formValues.name){
+      console.log('No hay ');
+      
+    }
+
+  }
 
   handleSubmit = e => {
     e.preventDefault();
@@ -24,6 +45,7 @@ class StudentForm extends Component {
             </p>
           </div>
         </div>
+
         <div className="row p-0 is-font-small">
           <div className="col">
             <div className="form-group">
@@ -56,7 +78,7 @@ class StudentForm extends Component {
             <div className="form-group">
               <label htmlFor="type">Tipo de documento</label>
               <select id="type" className="form-control" name="type">
-                <option value="" selected>    </option>
+                <option value="">    </option>
                 <option value="CC">Cédula de Ciudadanía</option>
                 <option value="CE">Cédula de Extranjería</option>
                 <option value="TI">Tarjeta de identidad</option>
@@ -65,7 +87,7 @@ class StudentForm extends Component {
           </div>
           <div className="col">
             <div className="form-group">
-              <label htmlFor="number">Número</label>
+              <label htmlFor="number">Número de documento</label>
               <input
                 type="text"
                 className="form-control"
@@ -80,7 +102,7 @@ class StudentForm extends Component {
         <div className="row p-0 row p-0 is-font-small">
           <div className="col">
             <div className="form-group ">
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">Correo universitario</label>
 
               <input
                 type="email"
@@ -91,19 +113,47 @@ class StudentForm extends Component {
               />
             </div>
           </div>
-          <div className="col" />
+          <div className="col">
+            <div className="form-group">
+              <label htmlFor="password">Contraseña</label>
+              <input
+                type="password"
+                onChange={this.props.onChange}
+                className="form-control"
+                name="password"
+                value={this.props.formValues.password}
+              />
+            </div>
+          </div>
         </div>
 
-        <div className="row p-0">
-          <div className="col" />
+        <div className="row p-0 is-font-small">
+          
           <div className="col">
+            <div className="form-group">
+              <label htmlFor="confirmPassword">Confirma tu contraseña</label>
+              <input
+                type="password"
+                className="form-control"
+                name="confirmPassword"
+                onChange={this.props.onChange}
+                value={this.props.formValues.confirmPassword}
+              />
+            </div>
+          </div>
+          <div className="col align-self-center " >
             <button
               onClick={this.handleClick}
-              className="btn btn-primary float-right"
+              className="btn btn-primary w-75 float-right"
             >
               Empezar
             </button>
           </div>
+        </div>
+
+        <div className="row p-0">
+          <div className="col" />
+         
         </div>
       </form>
     );
