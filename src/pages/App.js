@@ -7,6 +7,7 @@ import Home from "./Home";
 import TutorNew from "./Tutor/TutorNew";
 import TutoryDetails from "./Tutory/TutoryDetails";
 import NewStudent from "./Student/NewStudent";
+import HomeStudent from "./Student/HomeStudent";
 import CourseTutorNew from "./Tutor/CourseTutorNew";
 
 import "../styles/App.scss";
@@ -26,6 +27,8 @@ function App() {
               <Route exact path="/tutor/add-course" component={CourseTutorNew} />
               <Route exact path="/tutory/details" component={TutoryDetails} />
               <Route exact path="/student/new" component={NewStudent}/>
+              <Route exact path="/student/home" component={HomeStudent}/>
+              {/* <Route exact path="/student/tutoryes" component={HomeStudent}/> */}
             </Switch>
             </div>
             <Footer />
