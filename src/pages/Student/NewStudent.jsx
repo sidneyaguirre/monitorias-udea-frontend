@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import image from "../../assets/reading-girl.svg"
-import StudentForm from "../../components/student/StudentForm";
+import StudentForm from "../../components/Student/StudentForm";
 
 class NewStudent extends Component {
   state = {
