@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
-import '../styles/Tutory.scss'
+import '../../styles/Tutory/Tutory.scss'
 
-class Tutory extends Component{
+class TutoryCard extends Component{
     render(){
         return(
         <div className="tutory">
@@ -30,4 +30,4 @@ class Tutory extends Component{
     }
 }
 
-export default Tutory;
+export default TutoryCard;
