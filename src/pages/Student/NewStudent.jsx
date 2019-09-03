@@ -2,19 +2,20 @@ import React, { Component } from "react";
 import image from "../../assets/reading-girl.svg"
 import StudentForm from "../../components/Student/StudentForm";
 
-class NewStudent extends Component {
-  state = {
-    form: {
-      name: "",
-      lastName: "",
-      number: "",
-      email: "",
-      documentType: "",
-      documentNumber: "",
-      password: "",
-      confirmPassword:""
+const initialState = {
+  form: {
+    documentType: "",
+    documentNumber: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    confirmPassword:""
     }
-  };
+};
+
+class NewStudent extends Component {
+  state = initialState;
 
   // Reducer(?)
   handleChange = e => {
@@ -25,6 +26,41 @@ class NewStudent extends Component {
       }
     });
   };
+
+  handleSubmit = async e => {
+    e.preventDefault();
+    console.log("Form submitted");
+    console.log(this.state.form);
+    
+    this.createCourse(this.state.form)
+    .then(() => {this.setState(initialState)}
+    );    
+  };
+
+  createCourse = async info => {
+    const api =  "https://monitorias-backend.herokuapp.com/api/v1/users/createStudent";
+    var data = {      
+        documentType: info.documentType,
+        documentNumber: info.documentNumber,
+        firstName: info.firstName,
+        lastName: info.lastName,
+        email: info.email,
+        password: info.password,
+        confirmPassword: info.password
+    };
+    fetch(api, {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+        "Content-Type": "application/json"
+        }
+    })
+        .then(res => {res.json();
+        console.log(res);
+        })
+        .catch(error => console.error("Error:", error))
+        .then(response => console.log("Success:", response));
+    };
 
   render() {
     return (
@@ -38,6 +74,7 @@ class NewStudent extends Component {
             <div className="col-sm">
               <StudentForm 
                 onChange={this.handleChange}
+                onSubmit={this.handleSubmit}
                 formValues={this.state.form}
               />
             </div>

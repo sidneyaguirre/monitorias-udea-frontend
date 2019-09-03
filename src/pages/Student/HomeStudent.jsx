@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import image from "../../assets/reading-girl.svg"
 import SideBar from "../../components/common/SideBar";
-import Card from "../../components/common/Asesory-Card";
+import Card from "../../components/common/AsesoryCard";
 import Modal from "../../components/common/Modal";
 
 class HomeStudent extends Component {
@@ -89,8 +88,8 @@ class HomeStudent extends Component {
 
                         <div className="row py-0 pl-0">
                             {
-                                this.state.asesorias.map( asesoria => (
-                                    <div className="col col-sm-3 py-3">
+                                this.state.asesorias.map( (asesoria, i) => (
+                                    <div key={i} className="col col-sm-3 py-3">
                                         <Card data={asesoria}/>
                                     </div> )                                
                                 )

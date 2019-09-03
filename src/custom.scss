@@ -1,38 +1,14 @@
 $dark-ugreen: #0a351c;
 $medium-ugreen: #3a7158;
 $normal-ugreen: #6c9a05;
-
-// $body-bg: $medium-ugreen;
-
-// $colors: (
-//   "blue": $blue,
-//   "indigo": $indigo,
-//   "purple": $purple,
-//   "pink": $pink,
-//   "red": $red,
-//   "orange": $orange,
-//   "yellow": $yellow,
-//   "green": $green,
-//   "teal": $teal,
-//   "cyan": $cyan,
-//   "white": $white,
-//   "gray": $gray-600,
-//   "gray-dark": $gray-800
-// ) !default;
-
-// $olive-green: #6b9a03;
-// $dark-green: #12351c;
-// $dark-gray: #e0e0e0;
-// $light-gray: #ececec;
-// $font-gray: #9c9c9c;
-
 $theme-colors: (
   "primary": $dark-ugreen,
   "danger": #ff4136,
   "secondary": $medium-ugreen,
   "dark": #0a351c
 );
-$light-gray: #ECECEC;
+// $light-gray: #ECECEC;
+$light-gray: #f8f9fa;
 $medium-gray: #E0E0E0;
 $dark-gray: #A6A6A6;
 $font-family-sans-serif:
@@ -51,6 +27,14 @@ $font-family-sans-serif:
   // Emoji fonts
   "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 
+
+// $body-bg: $light-gray;
+body{
+  overflow-x: hidden;
+}
+.is-box{ 
+  box-shadow: 4px 5px 20px -20px rgba(0,0,0,0.66);
+}    
 .is-open-sans{
   font-family: "Open Sans"
 }
@@ -81,3 +65,25 @@ $font-family-sans-serif:
 }
 
 @import "../node_modules/bootstrap/scss/bootstrap";
+
+// $colors: (
+//   "blue": $blue,
+//   "indigo": $indigo,
+//   "purple": $purple,
+//   "pink": $pink,
+//   "red": $red,
+//   "orange": $orange,
+//   "yellow": $yellow,
+//   "green": $green,
+//   "teal": $teal,
+//   "cyan": $cyan,
+//   "white": $white,
+//   "gray": $gray-600,
+//   "gray-dark": $gray-800
+// ) !default;
+
+// $olive-green: #6b9a03;
+// $dark-green: #12351c;
+// $dark-gray: #e0e0e0;
+// $light-gray: #ececec;
+// $font-gray: #9c9c9c;

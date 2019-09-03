@@ -24,7 +24,7 @@ class Card extends Component {
                         <MdPlace /> {this.props.data.place}
                     </div>
                     
-                    <a href="#" className="btn btn-primary btn-sm float-right">Asistir</a>
+                    <button className="btn btn-primary btn-sm float-right">Asistir</button>
                 </div>
             </div>
 

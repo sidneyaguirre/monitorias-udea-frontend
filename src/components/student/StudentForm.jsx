@@ -1,4 +1,4 @@
-import React, { Component } from "./node_modules/react";
+import React, { Component } from 'react';
 
 class StudentForm extends Component {
   validation = {
@@ -22,16 +22,9 @@ class StudentForm extends Component {
   validateForm = () => {
     if(!this.props.formValues.name){
       console.log('No hay ');
-      
     }
-
   }
 
-  handleSubmit = e => {
-    e.preventDefault();
-    console.log("Form submitted");
-    console.log(this.props);
-  };
 
   render() {
     return (
@@ -49,13 +42,13 @@ class StudentForm extends Component {
         <div className="row p-0 is-font-small">
           <div className="col">
             <div className="form-group">
-              <label htmlFor="name">Nombres</label>
+              <label htmlFor="firstName">Nombres</label>
               <input
                 type="text"
                 onChange={this.props.onChange}
                 className="form-control"
-                name="name"
-                value={this.props.formValues.name}
+                name="firstName"
+                value={this.props.formValues.firstName}
               />
             </div>
           </div>
@@ -76,8 +69,10 @@ class StudentForm extends Component {
         <div className="row p-0 row p-0 is-font-small">
           <div className="col">
             <div className="form-group">
-              <label htmlFor="type">Tipo de documento</label>
-              <select id="type" className="form-control" name="type">
+              <label htmlFor="documentType">Tipo de documento</label>
+              <select id="type" className="form-control" name="documentType"
+              value={this.props.formValues.documentType}
+              onChange={this.props.onChange}>
                 <option value="">    </option>
                 <option value="CC">Cédula de Ciudadanía</option>
                 <option value="CE">Cédula de Extranjería</option>
@@ -87,13 +82,13 @@ class StudentForm extends Component {
           </div>
           <div className="col">
             <div className="form-group">
-              <label htmlFor="number">Número de documento</label>
+              <label htmlFor="documentNumber">Número de documento</label>
               <input
                 type="text"
                 className="form-control"
-                name="number"
+                name="documentNumber"
                 onChange={this.props.onChange}
-                value={this.props.formValues.number}
+                value={this.props.formValues.documentNumber}
               />
             </div>
           </div>
@@ -143,7 +138,7 @@ class StudentForm extends Component {
           </div>
           <div className="col align-self-center " >
             <button
-              onClick={this.handleClick}
+              onClick={this.props.onSubmit}
               className="btn btn-primary w-75 float-right"
             >
               Empezar
