@@ -108,7 +108,6 @@ class CreateCourseForm extends Component {
               required
             />
           </div>
-          <p>***Debe pedir la contraseña del monitor***</p>
 
           <button onClick={this.handleClick} className="button float-right">
             Guardar
