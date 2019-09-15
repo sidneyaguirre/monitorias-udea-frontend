@@ -5,7 +5,8 @@ $theme-colors: (
   "primary": $dark-ugreen,
   "danger": #ff4136,
   "secondary": $medium-ugreen,
-  "dark": #0a351c
+  "dark": #0a351c,
+  "success": $normal-ugreen
 );
 // $light-gray: #ECECEC;
 $light-gray: #f8f9fa;
@@ -51,7 +52,7 @@ body{
   font-weight: 800;
 }
 .is-font-small{
-  font-size: 0.9em;
+  font-size: 0.9em !important;
 }
 .is-full-height{
   height: 100vh;
@@ -63,7 +64,19 @@ body{
 .sidebar{
   top:30%;
 }
+.min-vh-20{
+  min-height: 20vh;
+}
+.min-vh-65{
+  min-height: 65vh !important;
+}
 
+.avatar {
+  vertical-align: middle;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 // $colors: (

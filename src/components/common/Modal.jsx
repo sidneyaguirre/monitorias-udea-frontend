@@ -10,16 +10,16 @@ class Modal extends Component {
     render() {
         return (
             <div>
-            <div className="modal-backdrop fade show" ></div>
+            <div className="modal-backdrop bg-light fade show" ></div>
             <div className="modal fade show d-block" tabIndex="-1" role="dialog">
                 <div className="modal-dialog modal-dialog-centered" role="document">
-                    <div className="modal-content rounded-0">
-                        <div className="modal-header  rounded-0 ">
+                    <div className="modal-content text-light bg-primary  is-box">
+                        <div className="modal-header border-bottom-0 rounded-0 ">
                             <h5 className="modal-title is-open-sans">{this.props.error.title}</h5>
                             <button 
                             onClick={this.closeModal}
                             type="button" 
-                            className="close" 
+                            className="close text-light" 
                             >
                             <span aria-hidden="true">&times;</span>
                             </button>

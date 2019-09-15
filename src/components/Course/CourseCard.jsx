@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Card extends Component {
+class CourseCard extends Component {
     render() {
         return (
             <div className="card rounded-lg  is-box">
@@ -25,4 +25,4 @@ class Card extends Component {
         );
     }
 }
-export default Card;
+export default CourseCard;

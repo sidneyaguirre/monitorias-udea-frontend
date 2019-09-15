@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import SideBar from "../../components/common/SideBar";
-import Card from "../../components/common/AsesoryCard";
+import TutoryCard from "../../components/common/TutoryCard";
 import Modal from "../../components/common/Modal";
+import SideBarStudent from "../../components/Student/SideBarStudent";
 
 class HomeStudent extends Component {
     state = {
@@ -63,6 +63,38 @@ class HomeStudent extends Component {
     ]
     };
 
+    getTutories = async info => {
+        const api = "https://monitorias-backend.herokuapp.com/api/v1/users/createStudent";
+        var data = {
+          documentType: info.documentType,
+          documentNumber: info.documentNumber,
+          firstName: info.firstName,
+          lastName: info.lastName,
+          email: info.email,
+          password: info.password,
+          confirmPassword: info.password
+        };
+        fetch(api, {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: {
+            "Content-Type": "application/json"
+          }
+        })
+          .then(res => {
+            res.json();
+            console.log(res);
+          })
+          .catch(error => {
+            console.error("Error:", error);
+            this.setState({loading: false});
+          })
+          .then(response => {
+            this.setState({loading: false});
+            this.props.history.push("/student/home");
+          });
+      };
+
     handleCloseModal = (childData) => {
         console.log('close');
         this.setState({error: null})
@@ -74,7 +106,7 @@ class HomeStudent extends Component {
                 { this.state.error ? <Modal error={this.state.error} closeModal={this.handleCloseModal} /> : '' }
                 <div className="row p-0">
                     <div className="col-1">
-                        <SideBar></SideBar>
+                        <SideBarStudent></SideBarStudent>
                     </div>
 
                     <div className="col-11 px-5">
@@ -90,7 +122,7 @@ class HomeStudent extends Component {
                             {
                                 this.state.asesorias.map( (asesoria, i) => (
                                     <div key={i} className="col col-sm-3 py-3">
-                                        <Card data={asesoria}/>
+                                        <TutoryCard data={asesoria}/>
                                     </div> )                                
                                 )
                             }

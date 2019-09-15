@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { MdAccessTime, MdToday, MdPlace } from "react-icons/md";
 
-class Card extends Component {
+class TutoryCard extends Component {
     render() {
         return (
-            <div className="card rounded-0">
+            <div className="card rounded-lg  is-box">
                 <div className="card-body">                  
                     <h5 className="card-title">{this.props.data.nameMateria}</h5>
                     <div className="is-font-small text-primary ">
@@ -31,4 +31,4 @@ class Card extends Component {
         );
     }
 }
-export default Card;
+export default TutoryCard;

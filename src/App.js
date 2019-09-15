@@ -5,6 +5,7 @@ import "./styles/App.scss";
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 import Home from "./pages/Home";
+import SignIn from "./pages/SignIn";
 
 import NewStudent from "./pages/Student/NewStudent";
 import HomeStudent from "./pages/Student/HomeStudent";
@@ -24,7 +25,8 @@ function App() {
             <Header />
             <div className="container-height">
             <Switch >
-              <Route exact path="/" component={Home} />
+              <Route exact path="/" component={SignIn} />
+              <Route exact path="/home" component={Home} />
               <Route exact path="/tutor/new" component={TutorNew} />
               <Route exact path="/tutor/add-course" component={CourseTutorNew} />
               <Route exact path="/tutory/new" component={TutoryNew} />

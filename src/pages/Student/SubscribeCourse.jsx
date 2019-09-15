@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import CourseCard from '../../components/Course/CourseCard';
-import SideBar from "../../components/common/SideBar";
+import SideBarStudent from "../../components/Student/SideBarStudent";
 // import Modal from "../../components/common/Modal";
 
 class SubscribeCourse extends Component {
+
+    constructor() {
+        super();
+        this.getCourses();
+    }
+
     state = {
         error: {
             title: 'Error', 
@@ -23,9 +29,33 @@ class SubscribeCourse extends Component {
         }]
     };
 
+
+    getCourses   = async info => {
+        const api = "https://monitorias-backend.herokuapp.com/api/v1/cursos/getAllCursos";
+        fetch(api, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json"
+          }
+        })
+          .then(res => {
+            res.json();
+            console.log(res);
+          })
+          .catch(error => {
+            console.error("Error:", error);
+            this.setState({loading: false});
+          })
+          .then(response => {
+            this.setState({loading: false});
+            console.log(response);
+          });
+      };
+    
     // curso: materiaXInstructor:
     //  { id, idMateria, semester, idInstructor, description, asesoria[{ idAsesoria } ],
     //   asesoriaPrivada[{ idAsesoria } ] subscriptors[ { id, name, email } ] }
+
     render() {
         return (
 
@@ -33,7 +63,7 @@ class SubscribeCourse extends Component {
                 {/* { this.state.error ? <Modal error={this.state.error} closeModal={this.handleCloseModal} /> : '' } */}
                 <div className="row p-0 ">
                     <div className="col-1 ">
-                        <SideBar></SideBar>
+                        <SideBarStudent></SideBarStudent>
                     </div>
 
                     <div className="col-11 px-5">
