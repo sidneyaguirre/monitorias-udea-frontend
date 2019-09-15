@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "../../styles/Tutor/Tutor.scss";
 
-class TutorForm extends Component {
+class NewTutorForm extends Component {
+
   handleClick = e => {
     /* prevent the button to submit info */
     console.log("button clicked");
@@ -145,4 +146,4 @@ class TutorForm extends Component {
   }
 }
 
-export default TutorForm;
+export default NewTutorForm;
