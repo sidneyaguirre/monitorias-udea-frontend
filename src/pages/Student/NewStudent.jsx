@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import image from "../../assets/new.jpg"
-import StudentForm from "../../components/student/StudentForm";
+import StudentForm from "../../components/Student/StudentForm";
 
 class NewStudent extends Component {
   state = {
