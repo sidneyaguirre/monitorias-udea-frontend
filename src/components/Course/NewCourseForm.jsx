@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class NewTutoryForm extends Component {
+class NewCourseForm extends Component {
 
 /* body: {
     "idInstructor":"23432423",
@@ -123,4 +123,4 @@ class NewTutoryForm extends Component {
       }
 }
 
-export default NewTutoryForm;
+export default NewCourseForm;
