@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import image from "../../assets/reading-girl.svg"
 import StudentForm from "../../components/Student/StudentForm";
+import Spinner from "../../components/common/Spinner";
 
 const initialState = {
   loading: false,
@@ -73,12 +74,12 @@ class NewStudent extends Component {
   render() {
     return (
       <div>
+      { this.state.loading ? <Spinner/> : " " }
         <div className="container">
-         
           <div className="row p-4 pt-5 h-100">
          
             <div className="col-sm align-self-center text-center">
-             { this.state.loading ? <span>Cargando....</span> : <span>No cargando</span>}
+            
               <img className="w-50"
                 src={image} alt="" />
             </div>
