@@ -6,7 +6,7 @@ import "../../styles/common/Footer.scss"
 class Footer extends Component {
   render() {
     return (
-      <div className="footer">
+      <div className="footer bg-light min-vh-20 py-1">
         <div className="footer__info">
           <span>
             Universidad de Antioquia | Vigilada Mineducación | Acreditación
@@ -26,7 +26,7 @@ class Footer extends Component {
               Peticiones, Quejas, Reclamos y Sugerencias
             </Link>{" "}<br/>
           </span>
-          <span>NIT 890980040-8<br/></span>
+          <span>NIT 890980040-8 </span>
           <span>
             <Link to="http://www.udea.edu.co/wps/wcm/connect/udea/328fd736-37e3-46b0-b43c-beb24cb8c6e3/rr-39994.pdf?MOD=AJPERES&amp;CVID=lZbell4&amp;CVID=lZbell4&amp;CVID=lZbell4&amp;CVID=lZbell4&amp;CVID=lZbell4&amp;CVID=lZbell4">
               Política de Tratamiento de Datos Personales

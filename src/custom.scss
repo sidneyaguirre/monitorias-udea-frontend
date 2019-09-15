@@ -1,4 +1,84 @@
-// // $body-bg: #000;
+$dark-ugreen: #0a351c;
+$medium-ugreen: #3a7158;
+$normal-ugreen: #6c9a05;
+$theme-colors: (
+  "primary": $dark-ugreen,
+  "danger": #ff4136,
+  "secondary": $medium-ugreen,
+  "dark": #0a351c,
+  "success": $normal-ugreen
+);
+// $light-gray: #ECECEC;
+$light-gray: #f8f9fa;
+$medium-gray: #E0E0E0;
+$dark-gray: #A6A6A6;
+$font-family-sans-serif:
+  // Safari for macOS and iOS (San Francisco)
+  -apple-system,
+  // Chrome < 56 for macOS (San Francisco)
+  BlinkMacSystemFont,
+  // Windows
+  "sans-serif",
+  "Lato-Regular"
+  "Open Sans",
+  // Android
+  "Roboto",
+  // Basic web fallback
+  "Helvetica Neue", Arial, sans-serif,
+  // Emoji fonts
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+
+
+// $body-bg: $light-gray;
+body{
+  overflow-x: hidden;
+}
+.is-box{ 
+  box-shadow: 4px 5px 20px -20px rgba(0,0,0,0.66);
+}    
+.is-open-sans{
+  font-family: "Open Sans"
+}
+.is-font-weight-200 {
+  font-weight: 200;
+}
+.is-font-weight-500 {
+  font-weight: 500;
+}
+.is-font-weight-600 {
+  font-weight: 600;
+}
+.is-font-weight-800 {
+  font-weight: 800;
+}
+.is-font-small{
+  font-size: 0.9em !important;
+}
+.is-full-height{
+  height: 100vh;
+}
+.row {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.sidebar{
+  top:30%;
+}
+.min-vh-20{
+  min-height: 20vh;
+}
+.min-vh-65{
+  min-height: 65vh !important;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+@import "../node_modules/bootstrap/scss/bootstrap";
+
 // $colors: (
 //   "blue": $blue,
 //   "indigo": $indigo,
@@ -20,18 +100,3 @@
 // $dark-gray: #e0e0e0;
 // $light-gray: #ececec;
 // $font-gray: #9c9c9c;
-
-
-$theme-colors: (
-  "primary": #6b9a03,
-  "danger": #ff4136,
-  "secondary":#ffffff,
-  "dark": rgb(22, 22, 22),
-);
-
-.row{
-  padding-left: 10%;
-  padding-right: 10%
-}
-
-@import "../node_modules/bootstrap/scss/bootstrap";
