@@ -13,6 +13,7 @@ import SubscribeCourse from "./pages/Student/SubscribeCourse";
 
 import CourseTutorNew from "./pages/Tutor/CourseTutorNew";
 import TutorNew from "./pages/Tutor/TutorNew";
+import CoursesList from "./pages/Tutor/CoursesList";
 import TutoryNew from "./pages/Tutory/TutoryNew";
 import TutoryDetails from "./pages/Tutory/TutoryDetails";
 
@@ -28,6 +29,7 @@ function App() {
               <Route exact path="/" component={SignIn} />
               <Route exact path="/home" component={Home} />
               <Route exact path="/tutor/new" component={TutorNew} />
+              <Route exact path="/tutor/my-courses" component={CoursesList} />
               <Route exact path="/tutor/add-course" component={CourseTutorNew} />
               <Route exact path="/tutory/new" component={TutoryNew} />
               <Route exact path="/tutory/details" component={TutoryDetails} />
