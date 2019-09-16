@@ -4,12 +4,24 @@ import { MdAccessTime, MdToday, MdPlace } from "react-icons/md";
 import "../../styles/Tutor/Tutor.scss";
 
 class TutorCourseCard extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      course: this.props.data,
+    };
+  }
+
+  handleClick = e => {
+    console.log("Button clicked!");
+    console.log(e.target.id);
+  };
+
   render() {
     return (
       <ul className="tutors-tutory-list">
         {this.props.data.map(tutory => {
           return (
-            <li key={tutory.subjectName}>
+            <li key={tutory.subjectId}>
               <div className="card rounded-lg  is-box">
                 <div className="card-body">
                   <h5 className="card-title text-primary">
@@ -27,8 +39,12 @@ class TutorCourseCard extends Component {
                     <MdPlace /> {tutory.place}
                   </div>
 
-                  <button className="btn btn-primary btn-sm float-right">
-                    Suscritos
+                  <button
+                    id={tutory.subjectName}
+                    onClick={this.handleClick}
+                    className="btn btn-primary btn-sm float-right"
+                  >
+                    Suscriptores
                   </button>
                 </div>
               </div>
