@@ -4,9 +4,9 @@ import SignInForm from "../components/common/SignInForm";
 class SignIn extends Component {
   render() {
     return (
-      <div className="jumbotron bg-light m-0">
+      <div className="jumbotron bg-light m-0 min-height-80">
         <div className="row m-4">
-          <div className="col p-4 m-4 bg-light ">
+          <div className="col p-4 m-4 bg-primary text-white ">
             <h1 className="display-4">Estudiante</h1>
             <p className="lead">
               ¿No tienes cuenta? Crea una
@@ -16,7 +16,7 @@ class SignIn extends Component {
               </a>
             </p>
             <SignInForm/>
-            <button className="btn btn-outline-primary">
+            <button className="btn  btn-outline-light">
               Iniciar sesión
             </button>
           </div>

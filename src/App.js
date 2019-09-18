@@ -23,10 +23,10 @@ function App() {
         <BrowserRouter>
           <div>
             <Header />
-            <div className="container-height">
+            <div className="">
             <Switch >
-              <Route exact path="/" component={SignIn} />
-              <Route exact path="/home" component={Home} />
+              <Route exact path="/signin" component={SignIn} />
+              <Route exact path="/" component={Home} />
               <Route exact path="/tutor/new" component={TutorNew} />
               <Route exact path="/tutor/add-course" component={CourseTutorNew} />
               <Route exact path="/tutory/new" component={TutoryNew} />

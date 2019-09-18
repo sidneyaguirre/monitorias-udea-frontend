@@ -32,7 +32,21 @@ $font-family-sans-serif:
 // $body-bg: $light-gray;
 body{
   overflow-x: hidden;
+  min-height: 100%;
+  position: relative;
 }
+
+body::after {
+  content: '';
+  display: block;
+  height: 150px; /* footer trick - same as footer height */
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
 .is-box{ 
   box-shadow: 4px 5px 20px -20px rgba(0,0,0,0.66);
 }    

@@ -1,15 +1,16 @@
 @import '../colors.scss';
 
-.footer {
-    height: 15vh;
-}
 
 .footer__info {
+    position: absolute;
+    bottom: 0;
+    padding: 1rem;
+    width: 100%;
     text-align: center;
-    
+    height: 150px;
     span {
-    color: $font-gray;
-    font-size: 12px;
-    display: inline;
+        color: $font-gray;
+        font-size: 12px;
+        display: inline;
     }
 }
