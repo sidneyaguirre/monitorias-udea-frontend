@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import image from "../../assets/reading-girl.svg"
+import image from "../../assets/reading-girl.svg";
 import StudentForm from "../../components/Student/StudentForm";
 import Spinner from "../../components/common/Spinner";
 
@@ -31,16 +31,15 @@ class NewStudent extends Component {
 
   handleSubmit = async e => {
     e.preventDefault();
-    this.setState(
-      { loading: true }
-     );
-    this.createStudent(this.state.form)
-      // .then(() => { this.setState(initialState) }
-      // );
+    this.setState({ loading: true });
+    this.createStudent(this.state.form);
+    // .then(() => { this.setState(initialState) }
+    // );
   };
 
   createStudent = async info => {
-    const api = "https://monitorias-backend.herokuapp.com/api/v1/users/createStudent";
+    const api =
+      "https://monitorias-backend.herokuapp.com/api/v1/users/createStudent";
     var data = {
       documentType: info.documentType,
       documentNumber: info.documentNumber,
@@ -63,10 +62,10 @@ class NewStudent extends Component {
       })
       .catch(error => {
         console.error("Error:", error);
-        this.setState({loading: false});
+        this.setState({ loading: false });
       })
       .then(response => {
-        this.setState({loading: false});
+        this.setState({ loading: false });
         this.props.history.push("/student/home");
       });
   };
@@ -74,14 +73,11 @@ class NewStudent extends Component {
   render() {
     return (
       <div>
-      { this.state.loading ? <Spinner/> : " " }
+        {this.state.loading ? <Spinner /> : " "}
         <div className="container">
           <div className="row p-4 pt-5 h-100">
-         
             <div className="col-sm align-self-center text-center">
-            
-              <img className="w-50"
-                src={image} alt="" />
+              <img className="w-50" src={image} alt="new student" />
             </div>
             <div className="col-sm">
               <StudentForm

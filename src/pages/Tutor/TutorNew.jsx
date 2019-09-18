@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
 import NewTutorForm from "../../components/Tutor/NewTutorForm";
-import tutorNewImg from '../../assets/voice_interface.svg'
-import "../../styles/Tutor/Tutor.scss"
-
+import tutorNewImg from "../../assets/voice_interface.svg";
+import "../../styles/Tutor/Tutor.scss";
 
 const initialState = {
   form: {
@@ -61,7 +60,10 @@ class TutorNew extends Component {
   };
 
   unequalPasswordsAlert = () => {
-    ReactDOM.render( <h4>Las contraseñas no coinciden</h4>, document.getElementById("passwordAlert") )
+    ReactDOM.render(
+      <h4>Las contraseñas no coinciden</h4>,
+      document.getElementById("passwordAlert")
+    );
   };
 
   createTutor = async info => {
@@ -78,7 +80,7 @@ class TutorNew extends Component {
     };
     if (equalPasswords) {
       data.password = info.password2;
-    }else{
+    } else {
       this.unequalPasswordsAlert();
     }
     console.log(data);
@@ -96,8 +98,12 @@ class TutorNew extends Component {
 
   render() {
     return (
-        <div className="container">
-          <div className="row">
+      <div className="container">
+        <div className="row p-4 pt-5 h-100">
+          <div className="col-sm align-self-center text-center">
+            <img className="w-50" src={tutorNewImg} alt="new tutor" />
+          </div>
+          <div className="col-sm">
             <NewTutorForm
               onChange={this.handleChange}
               onSubmit={this.handleSubmit}
@@ -105,12 +111,6 @@ class TutorNew extends Component {
               className="col"
             />
             <div id="passwordAlert"></div>
-          <div className="image-container col">
-            <img
-              src={tutorNewImg}
-              alt="new tutor"
-              className="tutor-img card-img-top mx-auto d-block"
-            />
           </div>
         </div>
       </div>

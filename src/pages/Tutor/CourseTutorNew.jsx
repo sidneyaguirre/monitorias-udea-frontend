@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import "../../styles/Tutor/Tutor.scss";
+import tutorNewImg from "../../assets/voice_interface.svg";
 import CreateCourseForm from "../../components/Tutor/CreateCourseForm";
 
 const initialState = {
@@ -44,13 +45,13 @@ class CourseTutorNew extends Component {
     });
   };
 
-   createCourse = async info => {
+  createCourse = async info => {
     var url =
       "https://monitorias-backend.herokuapp.com/api/v1/cursos/createCurso";
     var data = {
       idMateria: info.subjectId,
       idInstructor: info.documentNumber,
-      semester: info.year + '-' + info.semester,
+      semester: info.year + "-" + info.semester,
       description: info.description
     };
     fetch(url, {
@@ -82,19 +83,22 @@ class CourseTutorNew extends Component {
           )
         ).then(() => {
           this.setState({
-            courses: [].concat(this.state.courses, subjects)            
-          });console.log(this.state);
-          
+            courses: [].concat(this.state.courses, subjects)
+          });
+          console.log(this.state);
         });
       });
-  };
+  }
 
   render() {
     return (
       <div>
         <div className="container">
-          <div className="row">
-            <div className="col-sm">
+          <div className="row p-4 pt-5 h-100">
+            <div className="col-sm align-self-center text-center">
+              <img className="w-50" src={tutorNewImg} alt="new tutor" />
+            </div>
+            <div className="col">
               <CreateCourseForm
                 onChange={this.handleChange}
                 onSubmit={this.handleSubmit}
