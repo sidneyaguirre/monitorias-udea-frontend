@@ -151,7 +151,7 @@ class StudentForm extends Component {
         <div className="row p-0">
           <div className="col">  <p className="lead is-font-small ">
                             ¿Ya tienes cuenta? Inicia sesión  
-                            <a className="text-success" href="/" > aquí.</a>
+                            <a className="text-success" href="/signin" > aquí.</a>
               </p> </div>
          
         </div>
