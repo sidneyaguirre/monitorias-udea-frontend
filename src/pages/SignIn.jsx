@@ -1,11 +1,12 @@
 import React, { Component } from "react";
+import SignInForm from "../components/common/SignInForm";
 
 class SignIn extends Component {
   render() {
     return (
-      <div className="jumbotron bg-white">
+      <div className="jumbotron bg-light m-0">
         <div className="row m-4">
-          <div className="col p-4 m-4">
+          <div className="col p-4 m-4 bg-light ">
             <h1 className="display-4">Estudiante</h1>
             <p className="lead">
               ¿No tienes cuenta? Crea una
@@ -14,11 +15,12 @@ class SignIn extends Component {
                 aquí.
               </a>
             </p>
-            <button className="btn btn-primary">
+            <SignInForm/>
+            <button className="btn btn-outline-primary">
               Iniciar sesión
             </button>
           </div>
-          <div className="col p-4 m-4">
+          <div className="col p-4 m-4 bg-light ">
             <h1 className="display-4">Monitor</h1>
             <p className="lead">
               ¿No tienes cuenta? Crea una
@@ -27,7 +29,9 @@ class SignIn extends Component {
                 aquí.
               </a>
             </p>
-            <button className="btn btn-primary">
+            <SignInForm/>
+
+            <button className="btn btn-outline-primary">
               Iniciar sesión
             </button>
           </div>

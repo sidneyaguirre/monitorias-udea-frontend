@@ -15,8 +15,9 @@ class CreateCourseForm extends Component {
           <h3 className="h3 text-primary">Agregar Monitoría</h3>
           <p className="lead">
             Para registrar una nueva monitoría sólo debes llenar el siguiente
-            formulario. <br /> Todos los campos son requeridos
+            formulario.
           </p>
+          <p className="lead is-font-small">Todos los campos son requeridos</p>
         </div>
         </div>
         
