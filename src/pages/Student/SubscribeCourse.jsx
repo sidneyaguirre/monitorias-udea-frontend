@@ -83,8 +83,8 @@ class SubscribeCourse extends Component {
                         <div className="row pl-1 ">
                             <div className="col">
                                 <h4 className="h4 text-primary">Cursos</h4>
-                                <p className="lead is-font-small">Encuentra todos las
-                                    cursos a los cursos que puedes suscribirte.</p>
+                                <p className="lead is-font-small">Encuentra todos 
+                                   los cursos a los que puedes suscribirte.</p>
                             </div>
                         </div>
 
