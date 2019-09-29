@@ -5,7 +5,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <div className="row title justify-content-md-center is-primary">
+        <div className="row title justify-content-md-center text-white bg-primary">
           <div className="column">
             <p className="is-open-sans is-font-weight-500 ">Calendario</p>
           </div>

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class StudentForm extends Component {
   validation = {
@@ -9,22 +9,21 @@ class StudentForm extends Component {
     documentTypeError: "",
     documentNumberError: "",
     passwordError: "",
-    confirmPasswordError:""
+    confirmPasswordError: ""
   };
 
   handleClick = e => {
-    e.preventDefault();    
+    e.preventDefault();
     this.validateForm();
-    
+
     console.log("button clicked");
   };
 
   validateForm = () => {
-    if(!this.props.formValues.name){
-      console.log('No hay ');
+    if (!this.props.formValues.name) {
+      console.log("No hay ");
     }
-  }
-
+  };
 
   render() {
     return (
@@ -34,7 +33,7 @@ class StudentForm extends Component {
             <h3 className="h3 text-primary">¡Regístrate!</h3>
             <p className="lead">
               Bienvenid@ a Monitorías UdeA, solo necesitamos los siguientes
-              datos para que puedas empezar.              
+              datos para que puedas empezar.
             </p>
           </div>
         </div>
@@ -70,10 +69,14 @@ class StudentForm extends Component {
           <div className="col">
             <div className="form-group">
               <label htmlFor="documentType">Tipo de documento</label>
-              <select id="type" className="form-control" name="documentType"
-              value={this.props.formValues.documentType}
-              onChange={this.props.onChange}>
-                <option value="">    </option>
+              <select
+                id="type"
+                className="form-control"
+                name="documentType"
+                value={this.props.formValues.documentType}
+                onChange={this.props.onChange}
+              >
+                <option value=""> </option>
                 <option value="CC">Cédula de Ciudadanía</option>
                 <option value="CE">Cédula de Extranjería</option>
                 <option value="TI">Tarjeta de identidad</option>
@@ -123,7 +126,6 @@ class StudentForm extends Component {
         </div>
 
         <div className="row p-0 is-font-small">
-          
           <div className="col">
             <div className="form-group">
               <label htmlFor="confirmPassword">Confirma tu contraseña</label>
@@ -136,24 +138,27 @@ class StudentForm extends Component {
               />
             </div>
           </div>
-          <div className="col align-self-center " >
+          <div className="col align-self-center ">
             <button
               onClick={this.props.onSubmit}
-              className="btn btn-primary w-75 float-right"
+              className="btn btn-outline-primary float-right"
             >
               Empezar
             </button>
-          
           </div>
-          
         </div>
 
         <div className="row p-0">
-          <div className="col">  <p className="lead is-font-small ">
-                            ¿Ya tienes cuenta? Inicia sesión  
-                            <a className="text-success" href="/signin" > aquí.</a>
-              </p> </div>
-         
+          <div className="col">
+            {" "}
+            <p className="lead is-font-small ">
+              ¿Ya tienes cuenta? Inicia sesión
+              <a className="text-success" href="/signin">
+                {" "}
+                aquí.
+              </a>
+            </p>{" "}
+          </div>
         </div>
       </form>
     );
