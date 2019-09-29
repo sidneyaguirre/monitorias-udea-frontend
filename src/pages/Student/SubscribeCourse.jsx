@@ -1,57 +1,70 @@
 import React, { Component } from 'react';
+import axios from 'axios'
 import CourseCard from '../../components/Course/CourseCard';
 import SideBarStudent from "../../components/Student/SideBarStudent";
 // import Modal from "../../components/common/Modal";
-
+const initialState = {
+    error: {
+        title: 'Error', 
+        message: 'No se pudo guardar la asistencia, por favor intenta nuevamente.'
+    },
+    loading: false,
+    cursos: [{            
+        nameInstructor: "Fabian Rojas",
+        nameMateria: "Mecánica de fluidos",
+        description: "With supporting text below as a natural lead-in to additional content.",
+        semester: "2019-1",
+    }]
+};
 class SubscribeCourse extends Component {
-
+    
+    state = initialState;
     constructor() {
         super();
         this.getCourses();
     }
 
-    state = {
-        error: {
-            title: 'Error', 
-            message: 'No se pudo guardar la asistencia, por favor intenta nuevamente.'
-        },
-        cursos: [{            
-            nameInstructor: "Fabian Rojas",
-            nameMateria: "Mecánica de fluidos",
-            description: "With supporting text below as a natural lead-in to additional content.",
-            semester: "2019-1",
-        },
-        {            
-            nameInstructor: "Carlos Andrés García",
-            nameMateria: "Cálculo Integral",
-            description: "With supporting text below as a natural lead-in to additional content.",
-            semester: "2019-1",
-        }]
-    };
-
-
-    getCourses   = async info => {
+    getCourses(){
         const api = "https://monitorias-backend.herokuapp.com/api/v1/cursos/getAllCursos";
-        fetch(api, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json"
-          }
+        axios.get(api)
+        .then( (response) => {
+            console.log(response.data.data);
+            this.setState({cursos: response.data.data});
         })
-          .then(res => {
-            res.json();
-            console.log(res);
-          })
-          .catch(error => {
-            console.error("Error:", error);
+        .catch( (error) =>  {
+            this.setState({error: true});
+        })
+        .finally( () => {
             this.setState({loading: false});
-          })
-          .then(response => {
+        });
+    }
+
+    subscribeCourse(body){
+        const api = "https://monitorias-backend.herokuapp.com/api/v1/cursos/subscribeToCurso";
+   
+        axios.post(api, body)
+        .then( (response) => {
+            console.log(response.data.data);
+            this.setState({cursos: response.data.data});
+        })
+        .catch( (error) =>  {
+            this.setState({error: true});
+        })
+        .finally( () => {
             this.setState({loading: false});
-            console.log(response);
-          });
-      };
+        });
+    }
     
+    onSubscribe(id) {
+        const body = {
+            id: id,
+            idStudent: '',
+            name: '',
+            email: ''
+        }
+        console.log(id);
+        this.subscribeCourse(body);
+    }
     // curso: materiaXInstructor:
     //  { id, idMateria, semester, idInstructor, description, asesoria[{ idAsesoria } ],
     //   asesoriaPrivada[{ idAsesoria } ] subscriptors[ { id, name, email } ] }
@@ -70,8 +83,8 @@ class SubscribeCourse extends Component {
                         <div className="row pl-1 ">
                             <div className="col">
                                 <h4 className="h4 text-primary">Cursos</h4>
-                                <p className="lead is-font-small">Encuentra todos las
-                                    cursos a los cursos que puedes suscribirte.</p>
+                                <p className="lead is-font-small">Encuentra todos 
+                                   los cursos a los que puedes suscribirte.</p>
                             </div>
                         </div>
 
@@ -79,7 +92,11 @@ class SubscribeCourse extends Component {
                             {
                                 this.state.cursos.map((curso, i) => (
                                     <div key={i} className="col col-sm-3 py-3">
-                                        <CourseCard course={curso} />
+                                        <CourseCard 
+                                        id={curso._id} 
+                                        course={curso}
+                                        onSubscribe={this.onSubscribe}
+                                         />
                                     </div>)
                                 )
                             }

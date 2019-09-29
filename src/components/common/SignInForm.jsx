@@ -20,7 +20,7 @@ class SignInForm extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <div className="row p-0 is-font-small">
-          <div className="col-md-8">
+          <div className="col-md-7">
             <div className="form-group">
               <label htmlFor="firstName">Usuario </label>
               <input
@@ -32,7 +32,7 @@ class SignInForm extends Component {
           </div>       
         </div>
         <div className="row p-0 is-font-small">
-          <div className="col-md-8">
+          <div className="col-md-7">
             <div className="form-group">
               <label htmlFor="firstName">Contraseña </label>
               <input

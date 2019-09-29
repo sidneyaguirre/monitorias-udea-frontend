@@ -6,8 +6,7 @@ import "../../styles/common/Footer.scss"
 class Footer extends Component {
   render() {
     return (
-      <div className="footer bg-light min-vh-20 py-1">
-        <div className="footer__info">
+        <div className="footer__info bg-light">
           <span>
             Universidad de Antioquia | Vigilada Mineducación | Acreditación
             institucional hasta el 2022{" "}<br/>
@@ -36,7 +35,6 @@ class Footer extends Component {
             Medellín - Colombia | Todos los Derechos Reservados © 2018<br/>
           </span>
         </div>
-      </div>
     );
   }
 }
