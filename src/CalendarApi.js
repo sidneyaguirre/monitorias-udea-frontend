@@ -1,3 +1,28 @@
-var CLIENT_ID = '748508395160-5olhisuj4k2l9s5reem4ao232hp39g7l.apps.googleusercontent.com';
-var API_KEY = 'AIzaSyB9cAjpWwSokziS8VUU_U9ATqvanJDI4us';
+import axios from 'axios'
+
+export const getCalendarList = async token => {
+  const api =
+    "https://www.googleapis.com/calendar/v3/users/me/calendarList";
+  const headers = {
+    "Authorization": "Bearer "+token
+  }
+  axios.get(api, headers)
+  .then( (response) => {
+      console.log(response);
+  })
+  .catch( (error) =>  {
+  })
+  .finally( () => {
+  });
+
+  fetch(api, {
+    method: "GET",
+    headers: {
+      "Authorization": "Bearer "+token
+    }
+  })
+    .then(res => res.json())
+    .catch(error => console.error("Error:", error))
+    .then(response => console.log("Success:", response));
+}
 

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import '../styles/Home.scss';
+import "../styles/Home.scss";
 
 class Home extends Component {
   render() {
@@ -18,6 +18,14 @@ class Home extends Component {
               style={{ borderWidth: 0 }}
               width="900"
               height="500"
+              frameborder="0"
+              scrolling="no"
+            ></iframe>
+            <iframe
+              src="https://calendar.google.com/calendar/embed?src=dWRlYS5lZHUuY29fZGZuZmUwNW8yaDY3Y2M4aGVtOTRxaG1kcmdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&ctz=America%2FBogota"
+              style={{ borderWidth: 0 }}
+              width="800"
+              height="600"
               frameborder="0"
               scrolling="no"
             ></iframe>
