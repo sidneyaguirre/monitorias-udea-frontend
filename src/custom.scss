@@ -92,6 +92,8 @@ html {
   border-radius: 50%;
 }
 @import "../node_modules/bootstrap/scss/bootstrap";
+@import '~@fullcalendar/core/main.css';
+@import '~@fullcalendar/daygrid/main.css';
 
 // $colors: (
 //   "blue": $blue,
