@@ -6,8 +6,7 @@ import "../../styles/common/Footer.scss"
 class Footer extends Component {
   render() {
     return (
-      <div className="footer">
-        <div className="footer__info">
+        <div className="footer__info bg-light">
           <span>
             Universidad de Antioquia | Vigilada Mineducación | Acreditación
             institucional hasta el 2022{" "}<br/>
@@ -26,7 +25,7 @@ class Footer extends Component {
               Peticiones, Quejas, Reclamos y Sugerencias
             </Link>{" "}<br/>
           </span>
-          <span>NIT 890980040-8<br/></span>
+          <span>NIT 890980040-8 </span>
           <span>
             <Link to="http://www.udea.edu.co/wps/wcm/connect/udea/328fd736-37e3-46b0-b43c-beb24cb8c6e3/rr-39994.pdf?MOD=AJPERES&CVID=lZbell4&CVID=lZbell4&CVID=lZbell4&CVID=lZbell4&CVID=lZbell4&CVID=lZbell4">
               Política de Tratamiento de Datos Personales
@@ -36,7 +35,6 @@ class Footer extends Component {
             Medellín - Colombia | Todos los Derechos Reservados © 2018<br/>
           </span>
         </div>
-      </div>
     );
   }
 }

@@ -2,22 +2,26 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 import "../../styles/common/Header.scss";
-import logo from "../../assets/logo-udea.png";
+import logohz from "../../assets/logohzbig.png";
 
 class Header extends Component {
   render() {
     return (
-        <div className="container-fluid row justify-content-md-center">
-          <nav className="navbar navbar-expand-sm">
-            <Link className="navbar-brand" to="/">
-              <img className="logo-img" src={logo} alt="logo udea" />
-            </Link>
-                <div className="Navbar__title">
-                  <span className="font-weight-light">Monitorías </span>
-                  <span className="font-weight-bold">UdeA</span>
-                </div>
-          </nav>
-        </div>
+      <div className="">
+        <nav className="navbar navbar-light bg-light">
+          <Link className="navbar-brand"  to="/">
+            <img
+              src={logohz}
+              height="120"
+              className="d-inline-block align-top"
+              alt="logo udea"
+              to="/"             
+            />&nbsp;&nbsp;
+
+           
+          </Link>
+        </nav>
+      </div>
     );
   }
 }
