@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../styles/Home.scss";
 import Modal from "../components/common/Modal";
 import FullCalendarU from "../components/common/FullCalendar";
+import SignIn from "./SignIn";
 
 class Home extends Component {
   state = {
@@ -58,6 +59,7 @@ class Home extends Component {
         ) : (
           ""
         )}
+          <SignIn/>
         <div className="row title justify-content-md-center">
           <div className="column">
             <p className="is-open-sans is-font-weight-800 mt-4">Calendario</p>

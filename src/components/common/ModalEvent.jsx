@@ -15,9 +15,9 @@ class ModalEvent extends Component {
         <div className="modal-backdrop bg-light fade show modal-backdrop-event"></div>
         <div className="modal fade show d-block" tabIndex="-1" role="dialog">
           <div className="modal-dialog modal-dialog-centered" role="document">
-            <div className="modal-content modal-event text-light bg-secondary  is-box">
-              <div className="modal-header border-bottom-0 rounded-0 ">
-                <h5 className="modal-title is-open-sans">
+            <div className="modal-content w-75 modal-event text-light bg-secondary border-0 is-box">
+              <div className="modal-header pt-4  border-bottom-0">
+                <h5 className="modal-title  is-open-sans">
                   ¿Deseas asistir al evento?
                 </h5>
                 <button
@@ -28,8 +28,8 @@ class ModalEvent extends Component {
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div className="modal-body">
-                <p className="is-font-weight-800">{this.props.event.title}</p>
+              <div className="modal-body pb-4">
+                <p className="is-font-weight-500 is-open-sans">{this.props.event.title}</p>
                 <p className="">   <MdToday />  &nbsp;
                     {Moment(this.props.event.start).format('dddd, DD, MMMM')} 
                     </p>
@@ -39,7 +39,7 @@ class ModalEvent extends Component {
                     </p>  
               </div>
               <div className="modal-footer">
-                <button className="btn  btn-outline-light "> 
+                <button className="btn  btn-outline-light "  onClick={this.props.actionClicked}> 
                 <img
                           src="https://img.icons8.com/color/48/000000/google-calendar.png"
                           height="25px"

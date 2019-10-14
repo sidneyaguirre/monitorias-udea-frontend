@@ -3,12 +3,20 @@ import FullCalendar from "@fullcalendar/react";
 import googleCalendarPlugin from "@fullcalendar/google-calendar";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
-import Modal from "../common/ModalEvent";
-
+import Modal from "../common/Modal";
+import ModalEvent from "../common/ModalEvent";
+import Spinner from "../common/Spinner";
+import {subscribeToEvent} from "../../CalendarApi";
 class FullCalendarU extends Component {
   state = {
     showAttendToEvent: false,
-    event: {}
+    event: {},
+    loading: false,
+    error:{
+      show: false,
+      title: 'Error',
+      message: 'Ha ocurrido un error, intenta nuevamente'
+    }
   };
 
   handleEventClick = info => {
@@ -19,21 +27,58 @@ class FullCalendarU extends Component {
     this.setState({ showAttendToEvent: true });
   };
 
-  handleCloseModal = childData => {
+  handleCloseModalEvent = childData => {
     this.setState({ showAttendToEvent: false });
   };
 
+  handleCloseModal = childData => {
+    this.setState({ error: { ...this.state.erro, show:false} });
+  };
+
   handleAssitence = childData => {
-    console.log(" accepted");
+    this.setState({ showAttendToEvent: false });
+    this.setState({ loading: true });
+    subscribeToEvent(this.state.event).
+    then(res => res.json())
+    .catch(error => {
+      this.setState({ error: { ...this.state.error, show: true } });
+      console.error("Error:", error);
+    })
+    .then(response => {
+      if (response.status === 'confirmed'){
+        setTimeout(() => {
+          this.setState({ loading: false });
+          this.setState({
+            error: {
+              title: "!Genial!",
+              message:
+                "El evento ha sido agregado a tu cuenta",
+              show: true
+            }
+          });
+        }, 3000);
+      } else {
+        this.setState({ error: { ...this.state.error, show: true } });
+      }
+    
+      console.log("Success:", response);
+    });
+  
   };
 
   render() {
     return (
       <div className="pb-4 mb-4">
+      {this.state.loading ? <Spinner /> : " "}
+
+      {this.state.error.show ? (
+          <Modal error={this.state.error} closeModal={this.handleCloseModal} />
+        ) :   "" }
+
         {this.state.showAttendToEvent ? (
-          <Modal
+          <ModalEvent
             event={this.state.event}
-            closeModal={this.handleCloseModal}
+            closeModal={this.handleCloseModalEvent}
             actionClicked={this.handleAssitence}
           />
         ) : (

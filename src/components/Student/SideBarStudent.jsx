@@ -2,6 +2,29 @@ import React, { Component } from "react";
 import { MdHome, MdSearch } from "react-icons/md";
 
 class SideBarStudent extends Component {
+state = {
+  user: {
+    image: {
+      url: "https://www.w3schools.com/w3images/avatar2.png"
+    }
+  }
+}
+
+componentDidMount(){
+  this.getImage();
+}
+
+  getImage(){
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (!!user) {
+      console.log(user);
+      this.setState({ user });
+      
+    } else {
+      this.props.history.push("/");
+    }
+  }
+
   render() {
     return (
       <div
@@ -12,10 +35,10 @@ class SideBarStudent extends Component {
           className="list-group-item list-group-item-action px-2"
           role="tab"
           href="/student/home"
-          title="Ajustes de usuario"
+          title={this.state.user.displayName}
         >
           <img
-            src="https://www.w3schools.com/w3images/avatar2.png"
+            src={this.state.user.image.url}
             alt="Avatar"
             className="avatar"
           />
