@@ -6,16 +6,16 @@ import interactionPlugin from "@fullcalendar/interaction";
 import Modal from "../common/Modal";
 import ModalEvent from "../common/ModalEvent";
 import Spinner from "../common/Spinner";
-import {subscribeToEvent} from "../../CalendarApi";
+import { subscribeToEvent } from "../../CalendarApi";
 class FullCalendarU extends Component {
   state = {
     showAttendToEvent: false,
     event: {},
     loading: false,
-    error:{
+    error: {
       show: false,
-      title: 'Error',
-      message: 'Ha ocurrido un error, intenta nuevamente'
+      title: "Error",
+      message: "Ha ocurrido un error, intenta nuevamente"
     }
   };
 
@@ -32,48 +32,50 @@ class FullCalendarU extends Component {
   };
 
   handleCloseModal = childData => {
-    this.setState({ error: { ...this.state.erro, show:false} });
+    this.setState({ error: { ...this.state.erro, show: false } });
   };
 
   handleAssitence = childData => {
     this.setState({ showAttendToEvent: false });
     this.setState({ loading: true });
-    subscribeToEvent(this.state.event).
-    then(res => res.json())
-    .catch(error => {
-      this.setState({ error: { ...this.state.error, show: true } });
-      console.error("Error:", error);
-    })
-    .then(response => {
-      if (response.status === 'confirmed'){
-        setTimeout(() => {
+    subscribeToEvent(this.state.event)
+      .then(res => res.json())
+      .then(response => {
+        if (response.status === "confirmed") {
+          setTimeout(() => {
+            this.setState({ loading: false });
+            this.setState({
+              error: {
+                title: "!Genial!",
+                message: "El evento ha sido agregado a tu cuenta",
+                show: true
+              }
+            });
+          }, 3000);
+        } else {
           this.setState({ loading: false });
           this.setState({
             error: {
-              title: "!Genial!",
-              message:
-                "El evento ha sido agregado a tu cuenta",
+              title: "Error",
+              message: "Ha ocurrido un error, intenta nuevamente",
               show: true
             }
           });
-        }, 3000);
-      } else {
-        this.setState({ error: { ...this.state.error, show: true } });
-      }
-    
-      console.log("Success:", response);
-    });
-  
+        }
+        console.log("Success:", response);
+      });
   };
 
   render() {
     return (
       <div className="pb-4 mb-4">
-      {this.state.loading ? <Spinner /> : " "}
+        {this.state.loading ? <Spinner /> : " "}
 
-      {this.state.error.show ? (
+        {this.state.error.show ? (
           <Modal error={this.state.error} closeModal={this.handleCloseModal} />
-        ) :   "" }
+        ) : (
+          ""
+        )}
 
         {this.state.showAttendToEvent ? (
           <ModalEvent

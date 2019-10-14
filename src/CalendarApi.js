@@ -1,6 +1,5 @@
 import axios from "axios";
 
-var storeToken = "";
 
 export const initProfile = async token => {
   localStorage.setItem("token", JSON.stringify(token));

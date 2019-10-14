@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Modal from "../../components/common/Modal";
+import Spinner from "../../components/common/Spinner";
 import FullCalendarU from "../../components/common/FullCalendar";
 import SideBarStudent from "../../components/Student/SideBarStudent";
 import { subscribeToCalendar } from "../../CalendarApi";
@@ -7,6 +8,7 @@ import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
 class HomeStudent extends Component {
   state = {
+    loading: false,
     error: {
       show: false,
       title: "Error",
@@ -55,21 +57,31 @@ class HomeStudent extends Component {
   };
 
   subscribeToCalendar = response => {
+    this.setState({ loading: true });
     subscribeToCalendar(this.state.selected.events.googleCalendarId)
       .then(res => res.json())
       .catch(error => {
-        this.setState({ error: { ...this.state.error, show: true } });
-        console.error("Error:", error);
-      })
-      .then(response => {
+        this.setState({ loading: false });
         this.setState({
           error: {
-            title: "!Genial!",
-            message:
-              "Has sincronizado este calendario con tu cuenta de google.",
+            title: "Error",
+            message: "Ha ocurrido un error, intenta nuevamente",
             show: true
           }
         });
+      })
+      .then(response => {
+        setTimeout(() => {
+          this.setState({ loading: false });
+          this.setState({
+            error: {
+              title: "!Genial!",
+              message:
+                "Has sincronizado este calendario con tu cuenta de google.",
+              show: true
+            }
+          });
+        }, 1500);
         console.log("Success:", response);
       });
   };
@@ -81,6 +93,7 @@ class HomeStudent extends Component {
   render() {
     return (
       <div>
+        {this.state.loading ? <Spinner /> : " "}
         {this.state.error.show ? (
           <Modal error={this.state.error} closeModal={this.handleCloseModal} />
         ) : (
@@ -110,7 +123,7 @@ class HomeStudent extends Component {
                     height="25px"
                     alt="cal"
                   ></img>
-                  &nbsp; Guardar en mi calendario
+                  &nbsp; Añadir todos los eventos en mi calendario
                 </button>
               </div>
             </div>
