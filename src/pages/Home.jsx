@@ -1,11 +1,7 @@
 import React, { Component } from "react";
 import "../styles/Home.scss";
-import FullCalendar from "@fullcalendar/react";
-import googleCalendarPlugin from "@fullcalendar/google-calendar";
-import dayGridPlugin from "@fullcalendar/daygrid";
-import bootstrapPlugin from "@fullcalendar/bootstrap";
-import interactionPlugin from "@fullcalendar/interaction";
 import Modal from "../components/common/Modal";
+import FullCalendarU from "../components/common/FullCalendar";
 
 class Home extends Component {
   state = {
@@ -14,19 +10,31 @@ class Home extends Component {
       title: "¿Deseas asistir al evento?",
       buttonText: "Asistir"
     },
-    event: {},
-    events: {
-      googleCalendarId:
-        "udea.edu.co_dfnfe05o2h67cc8hem94qhmdrg@group.calendar.google.com",
-      className: "gcal-event"
-    }
+    events: [
+      {
+        googleCalendarId:
+          "udea.edu.co_hci7t4u4ff5r2l5h51fsupetd8@group.calendar.google.com"
+      },
+      {
+        googleCalendarId:
+          "udea.edu.co_4lt748tor6pkd89v2novt75g4o@group.calendar.google.com"
+      },
+      {
+        googleCalendarId:
+          "udea.edu.co_p4ikmikl93v651ht93k5ron768@group.calendar.google.com"
+      },
+      {
+        googleCalendarId:
+          "udea.edu.co_ti5ublk9ai6d0fh21t3iidnnls@group.calendar.google.com"
+      }
+    ]
   };
 
   handleEventClick = info => {
     info.jsEvent.preventDefault();
     console.log(info);
     this.setState({ event: info.event });
-    
+
     this.setState({ showAttendToEvent: true });
   };
 
@@ -57,22 +65,9 @@ class Home extends Component {
         </div>
         <div className="row justify-content-md-center mb-4 pb-4">
           <div className="column">
-            <FullCalendar
-              height={550}
-              width={450}
-              className="bg-light"
-              googleCalendarApiKey="AIzaSyAB8stIFlYsrJ_v4fXfLkn4k58D-0d_3kY"
-              defaultView="dayGridMonth"
-              googleCalendarId="udea.edu.co_dfnfe05o2h67cc8hem94qhmdrg@group.calendar.google.com"
-              events={this.state.events}
-              eventClick={this.handleEventClick}
-              plugins={[
-                googleCalendarPlugin,
-                dayGridPlugin,
-                bootstrapPlugin,
-                interactionPlugin
-              ]}
-            />
+            <FullCalendarU
+              googleCalendarId={this.state.events}
+            ></FullCalendarU>
           </div>
         </div>
       </div>

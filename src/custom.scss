@@ -91,28 +91,22 @@ html {
   height: 35px;
   border-radius: 50%;
 }
+
+.alert:hover {
+  background-color: #3a715844;
+}
+.close {text-shadow: none !important;
+}
+
+.modal-backdrop-event {
+  opacity: 0 !important;
+}
+.modal-event {
+    opacity: 0.95;
+    box-shadow: 3px 1px 34px -10px rgba(0,0,0,0.82);
+    border: none !important;
+}
+
 @import "../node_modules/bootstrap/scss/bootstrap";
 @import '~@fullcalendar/core/main.css';
 @import '~@fullcalendar/daygrid/main.css';
-
-// $colors: (
-//   "blue": $blue,
-//   "indigo": $indigo,
-//   "purple": $purple,
-//   "pink": $pink,
-//   "red": $red,
-//   "orange": $orange,
-//   "yellow": $yellow,
-//   "green": $green,
-//   "teal": $teal,
-//   "cyan": $cyan,
-//   "white": $white,
-//   "gray": $gray-600,
-//   "gray-dark": $gray-800
-// ) !default;
-
-// $olive-green: #6b9a03;
-// $dark-green: #12351c;
-// $dark-gray: #e0e0e0;
-// $light-gray: #ececec;
-// $font-gray: #9c9c9c;

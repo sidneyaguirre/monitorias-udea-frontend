@@ -1,33 +1,11 @@
 import React, { Component } from "react";
 
 class StudentForm extends Component {
-  validation = {
-    nameError: "",
-    lastNameError: "",
-    numberError: "",
-    emailError: "",
-    documentTypeError: "",
-    documentNumberError: "",
-    passwordError: "",
-    confirmPasswordError: ""
-  };
-
-  handleClick = e => {
-    e.preventDefault();
-    this.validateForm();
-
-    console.log("button clicked");
-  };
-
-  validateForm = () => {
-    if (!this.props.formValues.name) {
-      console.log("No hay ");
-    }
-  };
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.props.onSubmit}>
+      
         <div className="row p-0">
           <div className="col">
             <h3 className="h3 text-primary">¡Regístrate!</h3>

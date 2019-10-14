@@ -26,22 +26,22 @@ export const getCalendarList = async token => {
     .then(response => console.log("Success:", response));
 }
 
-export const getCalendar = async (calendarId, token) => {
-  const api =`https://www.googleapis.com/calendar/v3/calendars/${calendarId}`;
-  const headers = {
-    "Authorization": "Bearer "+token
-  }
-  axios.get(api, headers)
-  .then( (response) => {
-      console.log(response);
-  })
-  .catch( (error) =>  {
-  })
-  .finally( () => {
+
+export const subscribeToCalendar = async (calendarId, token) => {
+  console.log(token);
+  
+  const api =`https://www.googleapis.com/calendar/v3/users/me/calendarList/`;
+  const body = JSON.stringify({ 
+    data: {
+      id: calendarId
+    }
   });
 
+  
+
   fetch(api, {
-    method: "GET",
+    method: "POST",
+    body: body,
     headers: {
       "Authorization": "Bearer "+token
     }
@@ -51,19 +51,5 @@ export const getCalendar = async (calendarId, token) => {
     .then(response => console.log("Success:", response));
 }
 
-export const getEvent = async (eventId, token) => {
-  const api =`https://www.googleapis.com/calendar/v3/calendars/${eventId}`;
-  const headers = {
-    "Authorization": "Bearer "+token
-  }
-  axios.get(api, headers)
-  .then( (response) => {
-      console.log(response);
-  })
-  .catch( (error) =>  {
-  })
-  .finally( () => {
-  });
 
-}
 

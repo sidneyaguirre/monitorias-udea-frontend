@@ -2,9 +2,15 @@ import React, { Component } from "react";
 import image from "../../assets/reading-girl.svg";
 import StudentForm from "../../components/Student/StudentForm";
 import Spinner from "../../components/common/Spinner";
+import Modal from "../../components/common/Modal";
 
 const initialState = {
   loading: false,
+  error : {
+    show: false,
+    title: "Error",
+    message: "Completa todos los datos e intenta nuevamente."
+  },
   form: {
     documentType: "",
     documentNumber: "",
@@ -19,7 +25,6 @@ const initialState = {
 class NewStudent extends Component {
   state = initialState;
 
-  // Reducer(?)
   handleChange = e => {
     this.setState({
       form: {
@@ -29,12 +34,31 @@ class NewStudent extends Component {
     });
   };
 
-  handleSubmit = async e => {
-    e.preventDefault();
+  handleCloseModal = childData => {
+    this.setState({ error: {...this.state.error, show: false}});
+  };
+
+  handleSubmit(){ 
     this.setState({ loading: true });
     this.createStudent(this.state.form);
-    // .then(() => { this.setState(initialState) }
-    // );
+  };
+
+  validateForm = e => {
+    console.log(this.state.form);
+    e.preventDefault();
+    if (
+      !this.state.form.documentType
+      || !this.state.form.documentNumber
+      || !this.state.form.firstName 
+      || !this.state.form.lastName
+      || !this.state.form.password
+      || !this.state.form.confirmPassword
+      || !this.state.form.email) {
+      this.setState({ 
+        error: {...this.state.error, show: true}});
+    } else {
+      this.handleSubmit();
+    }
   };
 
   createStudent = async info => {
@@ -66,13 +90,18 @@ class NewStudent extends Component {
       })
       .then(response => {
         this.setState({ loading: false });
-        this.props.history.push("/student/home");
+        this.props.history.push("/student/step1");
       });
   };
 
   render() {
     return (
       <div>
+        {this.state.error.show ? 
+          <Modal error={this.state.error} closeModal={this.handleCloseModal} />
+         : 
+          ""
+        }
         {this.state.loading ? <Spinner /> : " "}
         <div className="container">
           <div className="row p-4 pt-5 h-100">
@@ -82,7 +111,7 @@ class NewStudent extends Component {
             <div className="col-sm">
               <StudentForm
                 onChange={this.handleChange}
-                onSubmit={this.handleSubmit}
+                onSubmit={this.validateForm}
                 formValues={this.state.form}
               />
             </div>
