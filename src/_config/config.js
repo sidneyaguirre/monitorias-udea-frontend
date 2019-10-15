@@ -1,1 +1,0 @@
-process.env.API_URL = process.env.API_URL || "https://ing-web-project.herokuapp.com"
