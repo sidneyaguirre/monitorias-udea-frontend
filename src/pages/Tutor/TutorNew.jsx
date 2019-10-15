@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import ReactDOM from "react-dom";
 
 import NewTutorForm from "../../components/Tutor/NewTutorForm";
@@ -111,6 +112,11 @@ class TutorNew extends Component {
               className="col"
             />
             <div id="passwordAlert"></div>
+          </div>
+          <div>
+            <Link to="/" className="text-success">
+              Volver
+            </Link>
           </div>
         </div>
       </div>

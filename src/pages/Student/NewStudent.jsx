@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
 import image from "../../assets/reading-girl.svg";
 import StudentForm from "../../components/Student/StudentForm";
 import Spinner from "../../components/common/Spinner";
@@ -115,6 +117,11 @@ class NewStudent extends Component {
                 formValues={this.state.form}
               />
             </div>
+            <div>
+            <Link to="/" className="text-success">
+              Volver
+            </Link>
+          </div>
           </div>
         </div>
       </div>

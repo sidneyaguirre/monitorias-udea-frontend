@@ -23,7 +23,7 @@ class NewTutorForm extends Component {
         <div className="col">
           <div className="form-group">
             <label>
-              <>Nombre</>
+              <>Nombres</>
             </label>
             <input
               onChange={this.props.onChange}
@@ -40,7 +40,7 @@ class NewTutorForm extends Component {
         <div className="col">
         <div className="form-group">
           <label>
-            <>Apellido</>
+            <>Apellidos</>
           </label>
           <input
             onChange={this.props.onChange}
@@ -71,6 +71,7 @@ class NewTutorForm extends Component {
               >
                 <option value="">Selecione...</option>
                 <option value="CC">Cédula de Ciudadanía</option>
+                <option value="CE">Cédula de Extranjería</option>
                 <option value="TI">Tarjeta de Identidad</option>
               </select>
             </div>
