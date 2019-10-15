@@ -2,18 +2,6 @@ import React, { Component } from 'react';
 
 class NewCourseForm extends Component {
 
-/* body: {
-    "idInstructor":"23432423",
-	"description":"Curso lógica 3",
-	"idMateria":"234324",
-	"semester":"2019-2",
-	"idAsesoria":"243234234",
-	"idAsesoriaPrivada":"65468",
-	"id":"3432432",
-	"name":"Luis",
-	"email":"leduardo.ochoa@udea.edu.co"
-}
- */
 
     handleClick = e => {
         /* prevent the button to submit info */
@@ -73,7 +61,7 @@ class NewCourseForm extends Component {
                   required              
                 >
                   <option value="">Selecione...</option>
-                  <option value="Active">Cédula de Ciudadanía</option>
+                  <option value="CC">Cédula de Ciudadanía</option>
                   <option value="TI">Tarjeta de Identidad</option>
                 </select>
               </div>

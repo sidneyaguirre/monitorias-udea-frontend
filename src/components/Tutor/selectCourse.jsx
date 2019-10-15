@@ -9,10 +9,10 @@ class SelectCourse extends Component {
   render() {
     return (
       <div>
-        <select name="subjectId" onChange={this.props.onChange} className="form-control">
+        <select name="name" onChange={this.props.onChange} className="form-control">
           {this.props.subjects.map(course => {
             return (
-              <option value={course._id} key={course._id}>
+              <option value={course.name} key={course._id}>
                 {course.name}
               </option>
             );

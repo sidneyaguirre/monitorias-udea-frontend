@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import "../../styles/Tutor/Tutor.scss";
 import tutorNewImg from "../../assets/voice_interface.svg";
-import CreateCourseForm from "../../components/Tutor/CreateCourseForm";
+import NewTutorForm from "../../components/Tutor/NewTutorForm";
 
 const initialState = {
   form: {
@@ -99,7 +99,7 @@ class CourseTutorNew extends Component {
               <img className="w-50" src={tutorNewImg} alt="new tutor" />
             </div>
             <div className="col">
-              <CreateCourseForm
+              <NewTutorForm
                 onChange={this.handleChange}
                 onSubmit={this.handleSubmit}
                 formValues={this.state}

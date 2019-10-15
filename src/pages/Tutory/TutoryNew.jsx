@@ -6,12 +6,15 @@ import tutorNewImg from "../../assets/voice_interface.svg";
 class TutoryNew extends Component {
   state = {
     form: {
-      courseName: "",
-      classroom: "",
-      documentType: "",
-      documentNumber: "",
-      email: "",
-      courseId: ""
+      idInstructor: "",
+      nameInstructor: "",
+      name: "",
+      description: "",
+      place: "",
+      semester: "",
+      date: "",
+      timeInit: "",
+      timeEnd: ""
     }
   };
 
