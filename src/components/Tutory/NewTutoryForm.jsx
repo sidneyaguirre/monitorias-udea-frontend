@@ -27,13 +27,13 @@ class NewTutoryForm extends Component {
           <div className="col">
             <div className="form-group">
               <label>Nombre del Curso</label>
-              {/* <SelectCourse
+              <SelectCourse
                 onChange={this.props.onChange}
                 className="form-control"
-                name="subjectId"
+                name="name"
                 required
                 subjects={this.props.formValues.courses}
-              /> */}
+              />
             </div>
           </div>
         </div>
@@ -47,7 +47,7 @@ class NewTutoryForm extends Component {
                 className="form-control"
                 name="place"
                 required
-                subjects={this.props.formValues.place}
+                value={this.props.formValues.form.place}
               />
             </div>
           </div>
@@ -59,7 +59,7 @@ class NewTutoryForm extends Component {
                 type="date"
                 className="form-control"
                 name="date"
-                value={this.props.formValues.date}
+                value={this.props.formValues.form.date}
                 required
               />
             </div>
@@ -74,7 +74,7 @@ class NewTutoryForm extends Component {
                 type="time"
                 className="form-control"
                 name="timeInit"
-                value={this.props.formValues.timeInit}
+                value={this.props.formValues.form.timeInit}
                 required
               />
             </div>
@@ -87,7 +87,7 @@ class NewTutoryForm extends Component {
                 type="time"
                 className="form-control"
                 name="timeEnd"
-                value={this.props.formValues.timeEnd}
+                value={this.props.formValues.form.timeEnd}
                 required
               />
             </div>
@@ -103,7 +103,7 @@ class NewTutoryForm extends Component {
                 type="text"
                 className="form-control"
                 name="year"
-                value={this.props.formValues.year}
+                value={this.props.formValues.form.year}
                 placeholder="año"
                 required
               />
@@ -119,7 +119,7 @@ class NewTutoryForm extends Component {
                 type="text"
                 className="form-control col"
                 name="semester"
-                value={this.props.formValues.semester}
+                value={this.props.formValues.form.semester}
                 required
               >
                 <option value="">Selecione...</option>
@@ -137,9 +137,59 @@ class NewTutoryForm extends Component {
             type="text"
             className="form-control"
             name="description"
-            value={this.props.formValues.description}
+            value={this.props.formValues.form.description}
             required
           />
+        </div>
+
+        <div className="form-row">
+          <div className="col">
+            <div className="form-group">
+              <label>Tipo de Documento del monitor</label>
+              <select
+                onChange={this.props.onChange}
+                type="text"
+                className="form-control"
+                name="documentType"
+                value={this.props.formValues.form.documentType}
+                required
+              >
+                <option value="">Selecione...</option>
+                <option value="Active">Cédula de Ciudadanía</option>
+                <option value="TI">Tarjeta de Identidad</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="col">
+            <div className="form-group">
+              <label>Número de Documento del monitor</label>
+              <input
+                onChange={this.props.onChange}
+                type="number"
+                className="form-control"
+                name="idInstructor"
+                value={this.props.formValues.form.idInstructor}
+                required
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="form-row">
+          <div className="col">
+            <div className="form-group">
+              <label>Nombre del monitor</label>
+              <input
+                onChange={this.props.onChange}
+                type="number"
+                className="form-control"
+                name="nameInstructor"
+                value={this.props.formValues.form.nameInstructor}
+                required
+              />
+            </div>
+          </div>
         </div>
 
         <button

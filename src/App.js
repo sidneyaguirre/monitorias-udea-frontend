@@ -11,7 +11,7 @@ import NewStudent from "./pages/Student/NewStudent";
 import HomeStudent from "./pages/Student/HomeStudent";
 import SubscribeCourse from "./pages/Student/SubscribeCourse";
 
-import CourseTutorNew from "./pages/Tutor/CourseTutorNew";
+import NewCourse from "./pages/Tutor/NewCourse";
 import TutorNew from "./pages/Tutor/TutorNew";
 import CoursesList from "./pages/Tutor/CoursesList";
 import TutoryNew from "./pages/Tutory/TutoryNew";
@@ -30,7 +30,7 @@ function App() {
               <Route exact path="/home" component={Home} />
               <Route exact path="/tutor/new" component={TutorNew} />
               <Route exact path="/tutor/my-courses" component={CoursesList} />
-              <Route exact path="/tutor/add-course" component={CourseTutorNew} />
+              <Route exact path="/tutor/new-course" component={NewCourse} />
               <Route exact path="/tutory/new" component={TutoryNew} />
               <Route exact path="/tutory/details" component={TutoryDetails} />
               <Route exact path="/student/new" component={NewStudent}/>
