@@ -46,7 +46,7 @@ componentDidMount(){
         <a
           className="list-group-item list-group-item-action"
           role="tab"
-          href="/"
+          href="/student/home"
           title="Inicio"
         >
           <MdHome />
