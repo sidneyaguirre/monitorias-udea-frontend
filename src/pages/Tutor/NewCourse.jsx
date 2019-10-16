@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import "../../styles/Tutor/Tutor.scss";
+import SideBarStudent from "../../components/Student/SideBarStudent";
 import tutorNewImg from "../../assets/voice_interface.svg";
 import NewCourseForm from "../../components/Course/NewCourseForm";
 
@@ -51,13 +52,19 @@ class CourseTutorNew extends Component {
     var url =
       "https://monitorias-backend.herokuapp.com/api/v1/cursos/createCurso";
     var auxInfo = info.name;
+    console.log(typeof auxInfo);
+
     var subject = auxInfo.split(" ");
+    console.log(subject);
+
     var data = {
       idMateria: subject[2],
       idInstructor: info.documentNumber,
       semester: info.year + "-" + info.semester,
       description: info.description
     };
+    console.log(data);
+
     fetch(url, {
       method: "POST",
       body: JSON.stringify(data),
@@ -67,7 +74,10 @@ class CourseTutorNew extends Component {
     })
       .then(res => res.json())
       .catch(error => console.error("Error:", error))
-      .then(response => console.log("Success:", response));
+      .then(response => {
+        console.log("Success:", response);
+        window.alert("Resultado: " + JSON.stringify(response.message));
+      })/* .then(() => window.location.reload()) */
   };
 
   componentDidMount() {
@@ -89,7 +99,7 @@ class CourseTutorNew extends Component {
           this.setState({
             courses: [].concat(this.state.courses, subjects)
           });
-          console.log(this.state);
+          // console.log(this.state);
         });
       });
   }

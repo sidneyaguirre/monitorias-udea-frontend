@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import SignInForm from "../components/common/SignInForm";
+// import SignInForm from "../components/common/SignInForm";
 import { GoogleAuthorize } from "react-google-authorize";
 import { initProfile } from "../CalendarApi";
 import Modal from "../components/common/Modal";

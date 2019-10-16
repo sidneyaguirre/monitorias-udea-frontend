@@ -44,6 +44,7 @@ class NewTutoryForm extends Component {
               <label>Lugar de la Asesoría</label>
               <input
                 onChange={this.props.onChange}
+                type="text"
                 className="form-control"
                 name="place"
                 required
@@ -103,7 +104,7 @@ class NewTutoryForm extends Component {
             <div className="col">
               <input
                 onChange={this.props.onChange}
-                type="text"
+                type="number"
                 className="form-control"
                 name="year"
                 value={this.props.formValues.form.year}
@@ -119,7 +120,7 @@ class NewTutoryForm extends Component {
             <div className="col">
               <select
                 onChange={this.props.onChange}
-                type="text"
+                type="number"
                 className="form-control col"
                 name="semester"
                 value={this.props.formValues.form.semester}
@@ -170,7 +171,7 @@ class NewTutoryForm extends Component {
               <label>Número de Documento - Monitor</label>
               <input
                 onChange={this.props.onChange}
-                type="number"
+                type="text"
                 className="form-control"
                 name="idInstructor"
                 value={this.props.formValues.form.idInstructor}
@@ -186,7 +187,7 @@ class NewTutoryForm extends Component {
               <label>Nombre del monitor</label>
               <input
                 onChange={this.props.onChange}
-                type="number"
+                type="text"
                 className="form-control"
                 name="nameInstructor"
                 value={this.props.formValues.form.nameInstructor}
