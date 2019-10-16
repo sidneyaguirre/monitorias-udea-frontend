@@ -18,6 +18,7 @@ const initialState = {
 class CourseTutorNew extends Component {
   state = {
     form: {
+      name: "",
       subjectId: "",
       documentNumber: "",
       year: "",
@@ -49,8 +50,10 @@ class CourseTutorNew extends Component {
   createCourse = async info => {
     var url =
       "https://monitorias-backend.herokuapp.com/api/v1/cursos/createCurso";
+    var auxInfo = info.name;
+    var subject = auxInfo.split(" ");
     var data = {
-      idMateria: info.subjectId,
+      idMateria: subject[2],
       idInstructor: info.documentNumber,
       semester: info.year + "-" + info.semester,
       description: info.description

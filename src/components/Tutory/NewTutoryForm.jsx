@@ -56,8 +56,9 @@ class NewTutoryForm extends Component {
             <div className="form-group">
               <label>Fecha de la Asesoría</label>
               <input
+                onChange={this.props.onChange}
                 type="date"
-                className="form-control"
+                className="form-control datepicker"
                 name="date"
                 value={this.props.formValues.form.date}
                 required
@@ -71,8 +72,9 @@ class NewTutoryForm extends Component {
             <div className="form-group">
               <label>Hora de Inicio</label>
               <input
+                onChange={this.props.onChange}
                 type="time"
-                className="form-control"
+                className="form-control datepicker"
                 name="timeInit"
                 value={this.props.formValues.form.timeInit}
                 required
@@ -84,8 +86,9 @@ class NewTutoryForm extends Component {
             <div className="form-group">
               <label>Hora de terminación</label>
               <input
+                onChange={this.props.onChange}
                 type="time"
-                className="form-control"
+                className="form-control datepicker"
                 name="timeEnd"
                 value={this.props.formValues.form.timeEnd}
                 required

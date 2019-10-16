@@ -39,14 +39,14 @@ class TutoryNew extends Component {
         /* we get the previous values in the form*/
         ...this.state.form,
         /* and add a new one */
-        [e.target.name]: e.target.value
-      }
+        [e.target.name]: e.target.value,        
+      }      
     });
   };
 
   createAsesory = async info => {
     var url =
-      "https://monitorias-backend.herokuapp.com/api/v1/createAsesoria";
+      "https://monitorias-backend.herokuapp.com/api/v1/createAsesoria";  
     var data = {
       idInstructor: info.documentNumber,
       nameInstructor: info.nameInstructor,
