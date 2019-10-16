@@ -155,7 +155,8 @@ class NewTutoryForm extends Component {
                 required
               >
                 <option value="">Selecione...</option>
-                <option value="Active">Cédula de Ciudadanía</option>
+                <option value="CC">Cédula de Ciudadanía</option>
+                <option value="CE">Cédula de Extranjería</option>
                 <option value="TI">Tarjeta de Identidad</option>
               </select>
             </div>
