@@ -27,13 +27,13 @@ class NewTutoryForm extends Component {
           <div className="col">
             <div className="form-group">
               <label>Nombre del Curso</label>
-              {/* <SelectCourse
+              <SelectCourse
                 onChange={this.props.onChange}
                 className="form-control"
                 name="name"
                 required
                 subjects={this.props.formValues.courses}
-              /> */}
+              />
             </div>
           </div>
         </div>
